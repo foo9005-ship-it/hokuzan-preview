@@ -137,6 +137,12 @@ th{background:var(--main-soft);font-weight:700}
 figure.photo{margin:12px 0 22px}
 figure.photo img{display:block;width:100%;border-radius:10px;border:1px solid var(--line)}
 figure.photo figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:10px 0 6px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}
+.gallery-cap{font-size:.85rem;color:var(--muted);margin:0 0 18px}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}
+.forms div{background:var(--main-soft);border-radius:10px;padding:12px 14px;font-size:.92rem;line-height:1.6}
+.forms b{display:block;font-size:1rem;margin-bottom:2px}
 .btn{display:inline-block;background:var(--main);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500;font-size:.95rem}
 .btn.light{background:#fff;color:var(--main)}
 .note{background:var(--accent-soft);border-radius:10px;padding:14px 18px;font-size:.92rem}
@@ -181,6 +187,7 @@ figure.photo figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
 .article .refs{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);margin-top:30px;padding-top:10px;word-break:break-all}
 .article .refs li{margin-bottom:4px}
 .back{display:inline-block;margin:0 0 16px;font-size:.9rem}
+.article table{min-width:0}
 
 /* よくある質問 */
 .faq-group{margin-bottom:8px}
@@ -240,6 +247,12 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     </div>
     <ul class="news" id="top-news"></ul>
   </div>
+
+  <a class="banner" href="#news/ws">
+    <span class="banner-tag">参加者募集</span>
+    <span><b>今帰仁中央公民館「発見的方法ワークショップ」</b><br><small>2027年3月12日（金）〜14日（日）2泊3日＋前夜11日のレクチャー（オプション）・定員20人（先着順）・参加無料</small></span>
+    <span class="banner-go">くわしく →</span>
+  </a>
 
   <a class="banner" href="#news/aisho">
     <span><b>北山文化圏センターの「愛称」を募集しています</b><br><small>みんなが呼びやすく、親しみのもてる名前を考えてください。</small></span>
@@ -432,7 +445,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <ul class="timeline">
     <li class="future"><b>令和8年（2026年）12月</b>マスタープラン（全体の方向）をまとめる</li>
     <li class="future"><b>令和9年（2027年）3月</b>基本計画をまとめる</li>
-    <li class="future"><b>令和8年度中</b>地域の方と建物の使い方を考えるワークショップを開く予定（日程が決まったらお知らせします）</li>
+    <li class="future"><b>令和9年（2027年）3月</b>中央公民館の設計者・丸山欣也さんと、建物の使い方を考える「発見的方法ワークショップ」を開く予定（<a href="#news/ws">参加者募集</a>）</li>
   </ul>
 
   <div class="note">このページは、工事や会議に動きがあったときと、少なくとも毎月1回、内容を見直して更新します。</div>
@@ -486,7 +499,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 
   <h2>参加・意見の出し方</h2>
   <details class="qa"><summary>意見はどこに出せばよいですか？</summary><div class="a"><div>北山文化圏センター事業化推進事業事務局の問い合わせフォームで受け付けます。いただいた意見は、個人が特定されない形で事業の検討に生かします。</div></div></details>
-  <details class="qa"><summary>ワークショップはいつありますか？</summary><div class="a"><div>地域の方と建物の使い方を考えるワークショップを、年度内に開く予定です。日程と参加の条件は、決まり次第お知らせします。</div></div></details>
+  <details class="qa"><summary>ワークショップはいつありますか？</summary><div class="a"><div>中央公民館の設計者・丸山欣也さんを迎えた「発見的方法ワークショップ」を、2027年3月12日（金）〜14日（日）の2泊3日で開きます。前夜の11日（木）には、丸山さんのレクチャー（オプション・参加は任意）があります。会場は今帰仁村コミュニティセンター、定員20人（先着順）、参加費は無料で、どなたでも参加できます。<a href="#news/ws">募集のお知らせ</a>をご覧ください。</div></div></details>
 
   <h2>運営・お金の出どころ</h2>
   <details class="qa"><summary>だれが施設を運営するのですか？</summary><div class="a"><div>施設の管理・運営は、村づくり推進組織が担う予定です。くわしいことが決まり次第お知らせします。</div></div></details>
@@ -541,6 +554,49 @@ const menuBtn = document.querySelector('.menu-btn');
 // お知らせ・記事のデータ（試作。日付は仮）
 const TODO = t => `<span class="todo">${t}</span>`;
 const NEWS = [
+  { id:'ws', date:'2026-11-27', cat:'募集', pin:true, img:'img/hanyagai.jpg', title:'今帰仁中央公民館「発見的方法ワークショップ」参加者募集（講師：丸山欣也さんほか）',
+    lead:'中央公民館を設計したアトリエ・モビルの丸山欣也さんを迎えて、2泊3日のワークショップを開きます。村を歩いて見つけたことをもとに、これからの中央公民館と北山文化圏センターの使い方を、いっしょに考えます。参加費は無料、どなたでも参加できます。',
+    body:`<h3>日程</h3><div class="table-wrap"><table>
+<tr><th style="width:9em">テーマ</th><td>「日陰を作る」――気候・風土・場所の発見</td></tr>
+<tr><th>日程</th><td>2027年3月12日（金）〜14日（日）　<b>2泊3日</b>（12日・13日の2泊）</td></tr>
+<tr><th>＋1日（オプション）</th><td>3月11日（木）夜　前夜の<b>レクチャー</b>（丸山欣也さん）。参加は任意です。${TODO('要確認：会場・11日の宿泊・レクチャーだけの参加の可否と申し込みの要否')}</td></tr>
+</table></div>
+<h3>タイムスケジュール（大まかな流れ）</h3><div class="table-wrap"><table>
+<tr><th style="width:9em"></th><th>午前</th><th>午後</th><th>夜</th></tr>
+<tr><th>3/11（木）<br><small>オプション</small></th><td>―</td><td>―</td><td><b>丸山欣也さんのレクチャー</b></td></tr>
+<tr><th>1日目 3/12（金）</th><td>集合・受付、説明</td><td>フィールドワーク（まち歩き・場所や材料探し）</td><td>交流会（宿泊：玉城公民館）</td></tr>
+<tr><th>2日目 3/13（土）</th><td>スケッチ・模型づくり</td><td>制作、中間発表</td><td>スライド会（宿泊：玉城公民館）</td></tr>
+<tr><th>3日目 3/14（日）</th><td>制作の仕上げ</td><td><b>発表・講評</b>、解散</td><td>―</td></tr>
+</table></div>
+<p>${TODO('要確認：各日の時間・内容（講師と確認中）')}</p>
+<h3>会場・宿泊</h3><div class="table-wrap"><table>
+<tr><th style="width:9em">会場</th><td>今帰仁村コミュニティセンター</td></tr>
+<tr><th>宿泊</th><td>玉城公民館（今帰仁村）</td></tr>
+</table></div>
+<h3>講師</h3><ul><li><b>丸山 欣也さん</b>（アトリエ・モビル）… 昭和50年（1975年）に完成した中央公民館を、象設計集団とともに設計しました。</li><li><b>杉山 至さん</b>（兵庫県立芸術文化観光専門職大学 准教授、舞台美術家）</li><li><b>浅沼 秀治さん</b> ${TODO('要確認：肩書き')}</li></ul>
+<h3>「発見的方法」とは</h3><p>まちを歩き、目で見て、手で描きながら、その土地にすでにある良さや手がかりを見つけ出し、そこから計画を考えていく方法です。${TODO('要確認：説明文を丸山さんと確かめる')}</p>
+<h3>3日間の流れ（予定）</h3><ol><li><b>歩いて見つける</b> … 中央公民館とそのまわり、村の中を歩き、気になったものを見て・描いて・記録します。</li><li><b>持ち寄って話す</b> … 見つけたことを持ち寄り、建物や場所の使い方の手がかりを探します。</li><li><b>形にして発表する</b> … これからの中央公民館・北山文化圏センターの使い方を、絵や模型にまとめて発表します。</li></ol><p>${TODO('要確認：内容は丸山さんと詰める')}</p>
+<h3>どんな形にまとめるか</h3><p>講師の企画では、ワークショップの最後のまとめ方を、期間・場所・参加する人に合わせて、次の3つから選びます。</p>
+<div class="forms"><div><b>原寸でつくる</b>見つけた材料で、実際の大きさのものを自分たちで建てる</div><div><b>模型をつくる</b>考えた使い方や空間を、模型にして見せる</div><div><b>スケッチで伝える</b>歩いて描いたスケッチをもとに、絵で発表する</div></div>
+<p>${TODO('要確認：今回どの形にするか（講師と確認）')}</p>
+<h3>これまでのワークショップから</h3><p>講師の企画書に参考として載っている、これまでのワークショップの様子です（写真：浅沼秀治さん提供）。${TODO('要確認：写真をサイトに載せてよいか（浅沼さん）、写っている方への配慮')}</p>
+<div class="gallery"><img src="img/ws/kominkan-1.jpg" alt="赤い柱の建物の前の芝生で、竹の束を前に作業する参加者"><img src="img/ws/kominkan-2.jpg" alt="中庭で竹を組んで骨組みをつくる様子"><img src="img/ws/kominkan-3.jpg" alt="赤い柱のそばで竹を立てる様子"><img src="img/ws/kominkan-4.jpg" alt="赤い柱が並ぶ半屋外の空間"></div>
+<p class="gallery-cap">竹を組んで、屋外に空間をつくる ${TODO('要確認：場所と年（中央公民館での取り組みか）')}</p>
+<div class="gallery"><img src="img/ws/indonesia-1.jpg" alt="水辺でスケッチをする参加者"><img src="img/ws/indonesia-2.jpg" alt="木の葉や枝で小屋のようなものをつくる参加者"><img src="img/ws/indonesia-3.jpg" alt="地面に並べられたたくさんのスケッチ"></div>
+<p class="gallery-cap">インドネシアの NGO とのワークショップ（歩いて、描いて、つくる）</p>
+<div class="gallery"><img src="img/ws/takao-1.jpg" alt="教室で作業する参加者"><img src="img/ws/takao-2.jpg" alt="黒板に貼り出されたスケッチ"><img src="img/ws/takao-3.jpg" alt="模型を囲んで話す参加者"></div>
+<p class="gallery-cap">高尾山ランドアートワークショップ（スケッチと模型づくり）</p>
+<div class="gallery"><img src="img/ws/butai-1.jpg" alt="劇場の舞台の上で輪になる参加者"><img src="img/ws/butai-2.jpg" alt="壁に貼った絵の前で発表する参加者"></div>
+<p class="gallery-cap">空間に絵を描き、発表する ${TODO('要確認：どこでの取り組みか')}</p>
+<h3>募集の内容</h3><div class="table-wrap"><table>
+<tr><th style="width:9em">定員</th><td>20人（先着順）</td></tr>
+<tr><th>参加できる人</th><td>どなたでも（村外の方も参加できます）</td></tr>
+<tr><th>参加費</th><td>無料</td></tr>
+<tr><th>持ち物・服装</th><td>歩きやすい服装 ${TODO('要確認：ほかの持ち物（講師に確認）')}</td></tr>
+<tr><th>締め切り</th><td>定員になり次第終了 ${TODO('要確認：締め切り日')}</td></tr>
+</table></div>
+<h3>申し込みのしかた</h3><p>このサイトの申し込みフォームからお申し込みください。電話・窓口での受付はしていません。</p><p><span class="btn" style="opacity:.6">申し込みフォーム（準備中）</span></p>
+<h3>主催・お問い合わせ</h3><p>主催：今帰仁村 企画財政課<br>お問い合わせ：北山文化圏センター事業化推進事業事務局</p><p>お問い合わせは、このサイトのお問い合わせフォームからお願いします。 ${TODO('準備中：お問い合わせフォーム')}</p>` },
   { id:'aisho', date:'2026-11-20', cat:'募集', pin:true, title:'北山文化圏センターの「愛称」を募集します',
     lead:'診療所・中央公民館・コミュニティセンター・道の駅がひとつになる「北山文化圏センター」。村のみなさんが呼びやすく、親しみのもてる「愛称」を募集します。',
     body:`<p>正式な名前は少し長くてかたいので、小さな子どもからお年寄りまで、みんなが口にしたくなる名前を待っています。</p>
