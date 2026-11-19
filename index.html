@@ -199,9 +199,36 @@ details.qa[open] summary{border-bottom:1px dashed var(--line)}
 details.qa .a{padding:12px 0 14px;display:flex;gap:10px}
 details.qa .a::before{content:"A";color:var(--accent);font-weight:700}
 
+/* 検討の記録・運営の体制 */
+.lanes{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 18px 16px}
+.lane{padding:12px 0;border-bottom:1px dashed var(--line)}
+.lane-name{display:block;color:var(--main);font-size:.92rem;margin-bottom:6px}
+.lane-row{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.lane-fac{font-weight:700;font-size:.88rem;width:11em;flex:none}
+.flow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;flex:1;min-width:0}
+.flow li{position:relative;border:1px solid var(--todo);border-radius:8px;padding:5px 12px;font-size:.86rem;line-height:1.45;background:#fff}
+.flow li small{display:block;font-size:.74rem;color:var(--muted)}
+.flow li.done{background:var(--done);border-color:var(--done);color:#fff}
+.flow li.doing{background:var(--doing);border-color:var(--doing);color:#fff}
+.flow li.done small,.flow li.doing small{color:#fff;opacity:.9}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem}
+.rec{margin:12px 0 20px}
+.rec.sample{border-style:dashed}
+.rec-dl{display:grid;grid-template-columns:7.5em 1fr;gap:8px 14px;margin:10px 0 0;font-size:.95rem}
+.rec-dl dt{font-weight:700;color:var(--main)}
+.rec-dl dd{margin:0;min-width:0}
+@media (max-width:560px){.rec-dl{grid-template-columns:1fr;gap:2px}.rec-dl dd{margin-bottom:10px}.lane-fac{width:100%}}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:640px){.roles{grid-template-columns:1fr}}
+.roles .card p{font-size:.95rem;margin:0 0 6px}
+.role-no{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--main);color:#fff;font-weight:700;font-size:.85rem;margin-bottom:6px}
+@media (min-width:821px){nav a{padding:6px 10px;font-size:.88rem}}
+
 footer{background:#22323b;color:#d8e0e4;font-size:.85rem;padding:28px 0}
 footer a{color:#fff}
 footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
+.gallery.sk{grid-template-columns:3fr 2fr;align-items:start}.gallery.sk img{aspect-ratio:auto;object-fit:contain;background:#fff}@media(max-width:560px){.gallery.sk{grid-template-columns:1fr}}
+.sk-quote{margin:.5em 0 1em;padding:.6em 1em;border-left:3px solid #b8492f;background:#faf6f2;font-family:"Noto Serif JP",serif;line-height:1.9}
 </style>
 </head>
 <body>
@@ -221,8 +248,11 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
         <li><a href="#about">事業について</a></li>
         <li><a href="#facilities">施設の紹介</a></li>
         <li><a href="#progress">スケジュールと進捗</a></li>
+        <li><a href="#record">検討の記録</a></li>
+        <li><a href="#voice">みんなで考える</a></li>
         <li><a href="#news">お知らせ</a></li>
         <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#org">運営の体制</a></li>
         <li><a href="#site">このサイトについて</a></li>
       </ul>
     </nav>
@@ -250,7 +280,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 
   <a class="banner" href="#news/ws">
     <span class="banner-tag">参加者募集</span>
-    <span><b>今帰仁中央公民館「発見的方法ワークショップ」</b><br><small>2027年3月12日（金）〜14日（日）2泊3日＋前夜11日のレクチャー（オプション）・定員20人（先着順）・参加無料</small></span>
+    <span><b>今帰仁中央公民館「発見的方法ワークショップ」</b><br><small>2027年3月12日（金）〜14日（日）2泊3日＋前夜11日のレクチャー（オプション）・定員20人（先着順）・参加無料（宿泊は1泊 学生500円・一般1,500円）</small></span>
     <span class="banner-go">くわしく →</span>
   </a>
 
@@ -265,7 +295,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   </figure>
 
   <h2>いまの進み具合</h2>
-  <p class="updated">2026年10月現在</p>
+  <p class="updated">2026年11月現在</p>
   <div class="status-grid">
     <div class="card">
       <span class="badge b-doing">開業準備中</span>
@@ -273,7 +303,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
       <p class="now">建物が完成し、開業の準備中</p>
       <div class="steps"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
       <div class="steps-label"><span>計画</span><span>工事</span><span>準備</span><span>開業</span></div>
-      <p class="when">開業：令和8年（2026年）11月</p>
+      <p class="when">開業：令和8年（2026年）12月（予定）</p>
     </div>
     <div class="card">
       <span class="badge b-doing">改修中</span>
@@ -344,7 +374,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <li><b>令和6年度（2024年度）</b>整備事業が始まる。測量・地質調査、設計</li>
     <li><b>令和7年度（2025年度）</b>保健センターの改修工事、道路の舗装・排水などの工事が完了</li>
     <li><b>令和8年（2026年）6月10日</b>北山文化圏センター施設の設置及び管理に関する条例が村議会で可決</li>
-    <li class="future"><b>令和8年（2026年）11月</b>診療所が開業（予定）</li>
+    <li class="future"><b>令和8年（2026年）12月</b>診療所が開業（予定）</li>
     <li><b>令和8年度（2026年度）</b>中央公民館の改修1期（解体・補修）が完了。コミュニティセンターの建て替え工事（工事中）</li>
     <li class="future"><b>令和8年（2026年）12月</b>マスタープランをまとめる（予定）</li>
     <li class="future"><b>令和9年度（2027年度）</b>中央公民館の改修2期、旧コミュニティセンターの解体、駐車場・外構の工事（予定）</li>
@@ -369,7 +399,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <h2>診療所</h2>
   <div class="ph">写真：診療所の外観</div>
   <div class="table-wrap"><table>
-    <tr><th style="width:9em">開業</th><td>令和8年（2026年）11月</td></tr>
+    <tr><th style="width:9em">開業</th><td>令和8年（2026年）12月（予定）</td></tr>
     <tr><th>役割</th><td>村の身近な医療の拠点</td></tr>
     <tr><th>診療の案内</th><td><span class="todo">要確認：診療所の案内を載せるかリンクにするか</span></td></tr>
   </table></div>
@@ -417,7 +447,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 <section class="page" data-page="progress">
   <h1>スケジュールと進捗</h1>
   <p class="lead">施設ごとの予定と、いまどこまで進んでいるかです。</p>
-  <p class="updated">最終更新：2026年10月◯日</p>
+  <p class="updated">最終更新：2026年11月◯日</p>
 
   <h2>全体の年表</h2>
   <div class="gantt">
@@ -434,7 +464,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <h2>年度ごとの予定</h2>
   <div class="table-wrap"><table>
     <tr><th>施設</th><th>令和7年度</th><th>令和8年度</th><th>令和9年度</th><th>令和10年度</th><th>〜令和14年</th></tr>
-    <tr><td><b>診療所</b></td><td>建物が完成</td><td>11月 開業</td><td>運営</td><td>運営</td><td>運営</td></tr>
+    <tr><td><b>診療所</b></td><td>建物が完成</td><td>12月 開業（予定）</td><td>運営</td><td>運営</td><td>運営</td></tr>
     <tr><td><b>中央公民館</b></td><td>―</td><td>改修1期 完了</td><td>改修2期</td><td>利用開始</td><td>運営</td></tr>
     <tr><td><b>コミュニティセンター</b></td><td>設計</td><td>建て替え工事</td><td>旧館の解体</td><td>利用開始</td><td>運営</td></tr>
     <tr><td><b>駐車場・外構</b></td><td>舗装・排水 完了</td><td>―</td><td>駐車場・外構の工事</td><td>利用開始</td><td>―</td></tr>
@@ -448,7 +478,144 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <li class="future"><b>令和9年（2027年）3月</b>中央公民館の設計者・丸山欣也さんと、建物の使い方を考える「発見的方法ワークショップ」を開く予定（<a href="#news/ws">参加者募集</a>）</li>
   </ul>
 
+  <p>会議の開催の記録は <a href="#record">検討の記録</a>、ワークショップや意見募集は <a href="#voice">みんなで考える</a> をご覧ください。</p>
+
   <div class="note">このページは、工事や会議に動きがあったときと、少なくとも毎月1回、内容を見直して更新します。</div>
+</section>
+
+<!-- ========== 検討の記録 ========== -->
+<section class="page" data-page="record">
+  <h1>検討の記録</h1>
+  <p class="lead">計画づくりの節目と、会議の開催の記録です。</p>
+  <p class="updated">最終更新：2026年11月◯日</p>
+
+  <div class="note" style="margin-bottom:8px"><b>このページに載せるもの</b>：会議の日時・場所・議題、話し合った内容の要旨、公開できる資料。<br><b>載せないもの</b>：会議での一人ひとりの発言。</div>
+
+  <h2>いまの状況（2026年11月現在）</h2>
+  <p>マスタープラン（全体の方向）の原稿づくりを進めています。令和8年（2026年）12月にまとめる予定です。</p>
+
+  <h2>計画づくりの流れ</h2>
+  <div class="lanes">
+    <div class="lane">
+      <b class="lane-name">施設の整備</b>
+      <div class="lane-row"><span class="lane-fac">診療所</span><ol class="flow"><li class="done">建物が完成</li><li>令和8年（2026年）12月 開業<small>予定</small></li></ol></div>
+      <div class="lane-row"><span class="lane-fac">中央公民館</span><ol class="flow"><li class="doing">改修1期<small>令和8年度</small></li><li>改修2期<small>令和9年度</small></li><li>利用開始<small>令和10年度（2028年度）</small></li></ol></div>
+      <div class="lane-row"><span class="lane-fac">コミュニティセンター</span><ol class="flow"><li class="doing">建て替え工事<small>令和8年度</small></li><li>旧館の解体<small>令和9年度</small></li><li>利用開始<small>令和10年度（2028年度）</small></li></ol></div>
+    </div>
+    <div class="lane">
+      <b class="lane-name">全体の計画づくり</b>
+      <div class="lane-row"><ol class="flow"><li class="done">整備基本計画</li><li class="done">条例の可決<small>令和8年6月</small></li><li class="doing">マスタープラン<small>令和8年（2026年）12月</small></li><li>基本計画<small>令和9年（2027年）3月</small></li><li>道の駅の設計・工事</li><li>道の駅の開業<small>令和14年（2032年）予定</small></li></ol></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--done)"></i>終わったこと</span><span><i style="background:var(--doing)"></i>いま進めていること</span><span><i style="background:#fff;border:1px solid var(--todo)"></i>これから</span></div>
+  </div>
+  <p style="margin-top:14px">診療所は建物が完成し、中央公民館は改修の1期（解体と補修）を令和8年度に終えます（2期は令和9年度の予定）。コミュニティセンターは、令和8年度に新しい建物の建て替え工事を行っています。</p>
+  <p>これと並行して、4つの施設をどう使い、どう結びつけるかの全体の方向（マスタープラン）を令和8年（2026年）12月に、基本計画を令和9年（2027年）3月にまとめます。道の駅は、これらの計画をもとに設計・工事を進めます。 <span class="todo">要確認：基本計画の対象（全体か道の駅か）</span></p>
+
+  <h2>記録の一覧（新しいものが上）</h2>
+  <div class="table-wrap"><table>
+    <tr><th style="width:3em">番号</th><th style="width:11em">日付</th><th>会議・できごと</th><th>内容の要旨</th><th style="width:9em">資料</th></tr>
+    <tr><td>8</td><td>令和9年（2027年）3月（予定）</td><td>基本計画をまとめる</td><td>―</td><td>―</td></tr>
+    <tr><td>7</td><td>令和9年（2027年）3月12〜14日（予定）</td><td>発見的方法ワークショップ</td><td>中央公民館の設計者・丸山欣也さんと、建物の使い方を考えます。</td><td><a href="#news/ws">参加者募集</a></td></tr>
+    <tr><td>6</td><td>令和8年（2026年）12月（予定）</td><td>マスタープランをまとめる</td><td>―</td><td>―</td></tr>
+    <tr><td>5</td><td>令和8年（2026年）12月（予定）</td><td>診療所が開業</td><td><span class="todo">記入：開業日</span></td><td>―</td></tr>
+    <tr><td>4</td><td>令和8年（2026年）10月6日</td><td>第2回マスタープラン検討会議</td><td>村内の視察と、道の駅をめざす施設の配置の考え方についての意見交換。<a href="#rec-2" data-scroll="rec-2">くわしく ↓</a></td><td><span class="todo">要確認：公開する資料</span></td></tr>
+    <tr><td>3</td><td><span class="todo">要確認：日付</span></td><td>第1回マスタープラン検討会議</td><td><span class="todo">記入</span></td><td><span class="todo">要確認</span></td></tr>
+    <tr><td>2</td><td>令和8年（2026年）6月10日</td><td>北山文化圏センター施設の設置及び管理に関する条例が村議会で可決</td><td>―</td><td><span class="todo">記入：条例へのリンク</span></td></tr>
+    <tr><td>1</td><td>令和4年（2022年） <span class="todo">要確認：年</span></td><td>北山文化圏センター整備基本計画をまとめる</td><td><span class="todo">要確認：計画の目的の要旨</span></td><td><span class="todo">要確認：公開の有無</span></td></tr>
+  </table></div>
+
+  <h2>会議ごとの記録</h2>
+  <p>会議が開かれるたびに、同じ型で1件ずつ足していきます。</p>
+  <div class="card rec" id="rec-2">
+    <h3>第2回 マスタープラン検討会議</h3>
+    <dl class="rec-dl">
+      <dt>日時</dt><dd>令和8年（2026年）10月6日（火）　午前：村内の視察／午後：会議 <span class="todo">記入：時刻</span></dd>
+      <dt>場所</dt><dd>今帰仁村役場</dd>
+      <dt>議題</dt><dd><ol style="margin:0;padding-left:1.3em"><li>村内の視察（今帰仁城跡周辺、今泊集落、乙羽岳展望台など）</li><li>道の駅をめざす商業施設の、建物と屋外空間の配置の案</li><li>地域の歴史や暮らしに根ざしたブランドづくり</li></ol></dd>
+      <dt>内容の要旨</dt><dd>午前は、建築、ランドスケープ、地域ブランドデザイン、事業戦略など各分野の専門家が村内を巡り、村の歴史や暮らし、計画地との位置関係を確かめました。午後は、産業連携ゾーンに整備する、道の駅をめざす商業施設について、配置の案が示されました。大きな建物を一つ建てるのではなく、小さな棟を集落のように並べて大きな軒下でつなぐ考え方や、ソーリガーの水辺を生かした広場づくりについて、意見を交わしました。あわせて、村民のみなさんと一緒に考える場の大切さも話し合いました。 <span class="todo">要確認：広報なきじん12月号と同じ内容。役場の確認後に公開</span></dd>
+      <dt>次の予定</dt><dd>今回の議論を踏まえ、マスタープランの取りまとめを進めます。</dd>
+      <dt>資料</dt><dd><span class="todo">要確認：公開する資料の範囲</span></dd>
+      <dt>掲載日</dt><dd>令和8年（2026年）◯月◯日 <span class="todo">記入</span></dd>
+    </dl>
+  </div>
+
+  <h2>会議の体制</h2>
+  <p>計画づくりは、「マスタープラン検討会議」で話し合いながら進めています。</p>
+  <div class="table-wrap"><table>
+    <tr><th style="width:11em">構成</th><td>村と、建築、ランドスケープ、地域ブランドデザイン、事業戦略などの専門家 <span class="todo">要確認：構成の書き方（個人名は載せない）</span></td></tr>
+    <tr><th>公開・傍聴</th><td><span class="todo">要確認</span></td></tr>
+  </table></div>
+
+  <div class="note">このページは、会議が開かれたときと計画づくりの節目に更新します。あわせて、少なくとも毎月1回、内容を見直します。</div>
+</section>
+
+<!-- ========== みんなで考える ========== -->
+<section class="page" data-page="voice">
+  <h1>みんなで考える</h1>
+  <p class="lead">ワークショップや意見募集のご案内と、いただいた声のまとめです。</p>
+
+  <h2>なぜ声を聞くのか</h2>
+  <p>中央公民館やコミュニティセンター、道の駅の使い方や名前などは、これから決めていくことがたくさんあります。</p>
+  <p>毎日の暮らしで施設を使うのは、村民のみなさんです。そこで、計画づくりの中で、みなさんの声を聞く場を設けていきます。 <span class="todo">要確認：回数・時期</span></p>
+
+  <h2>いま募集していること</h2>
+  <a class="banner" href="#news/ws">
+    <span class="banner-tag">参加者募集</span>
+    <span><b>今帰仁中央公民館「発見的方法ワークショップ」</b><br><small>2027年3月12日（金）〜14日（日）。設計者・丸山欣也さんと、建物の使い方を考えます。</small></span>
+    <span class="banner-go">くわしく →</span>
+  </a>
+  <a class="banner" href="#news/aisho">
+    <span class="banner-tag">愛称募集</span>
+    <span><b>北山文化圏センターの「愛称」を募集します</b><br><small>4つの施設をまとめた、親しみやすい呼び名を募ります。 <span class="todo">要確認：期間・応募できる人</span></small></span>
+    <span class="banner-go">くわしく →</span>
+  </a>
+
+  <h2>いま意見を聞きたいこと</h2>
+  <p><span class="todo">要確認：役場と決めた論点だけを載せる</span></p>
+  <ul>
+    <li>例：改修後の中央公民館の部屋の使い方</li>
+    <li>例：道の駅の名前の考え方</li>
+  </ul>
+
+  <h2>参加の方法</h2>
+  <div class="forms">
+    <div><b>ワークショップ</b>テーマごとに集まって話し合います。日程・場所は決まり次第、お知らせでご案内します。</div>
+    <div><b>問い合わせフォーム</b>いつでも意見をお寄せいただけます。 <span class="todo">決める：フォームの仕組み</span></div>
+    <div><b>窓口・紙</b>インターネットを使わない方のために、紙で意見を出せる方法を用意することを考えています。 <span class="todo">要確認：置き場所</span></div>
+  </div>
+  <ul>
+    <li>働いている方も参加しやすいよう、昼の回と夜の回を設けることを考えています。 <span class="todo">要確認</span></li>
+    <li>中学生・高校生の回を別に設け、若い世代の意見を別にまとめることも考えています。 <span class="todo">要確認</span></li>
+  </ul>
+
+  <h2>これまでの開催</h2>
+  <p>まだ開催していません。開催したあと、その回の資料と、出た意見のまとめを、次の形で載せます。</p>
+  <div class="card rec sample">
+    <h3>第◯回　（テーマ） <span class="todo">見本</span></h3>
+    <dl class="rec-dl">
+      <dt>日時・場所</dt><dd>―</dd>
+      <dt>参加</dt><dd>―（人数。個人名は書きません）</dd>
+      <dt>その回の資料</dt><dd>―</dd>
+      <dt>出た意見のまとめ</dt><dd>
+        <div class="table-wrap" style="margin:4px 0 0"><table style="min-width:0">
+          <tr><th style="width:11em">分類</th><th>主な意見</th></tr>
+          <tr><td>部屋の使い方</td><td>―</td></tr>
+          <tr><td>あったらよい機能</td><td>―</td></tr>
+          <tr><td>その他</td><td>―</td></tr>
+        </table></div>
+      </dd>
+    </dl>
+  </div>
+
+  <h2>いただいた声のその後</h2>
+  <p>いただいた意見は、計画づくりの会議で共有し、検討に生かします。どのように生かしたかは、このページでお返しします。 <span class="todo">要確認：役場と決める</span></p>
+
+  <h2>個人情報の扱い</h2>
+  <ul>
+    <li>いただいた意見は、個人が特定されない形で事業の検討に生かします。</li>
+    <li>お名前や連絡先は、お返事や参加の連絡のためだけに使い、ほかの目的には使いません。 <span class="todo">要確認：役場の決まりに合わせる</span></li>
+    <li>ワークショップの写真で人物が写るものは、ご本人の了承を得てから載せます。</li>
+  </ul>
 </section>
 
 <!-- ========== お知らせ ========== -->
@@ -480,13 +647,13 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <details class="qa"><summary>このサイトは今帰仁村の公式サイトですか？</summary><div class="a"><div>いいえ。今帰仁村の了承を得て、北山文化圏センター事業化推進事業事務局が作成・運営しています。正式な手続き・申請などは、今帰仁村の公式サイトや窓口でご確認ください。</div></div></details>
 
   <h2>スケジュール・工事中の暮らし</h2>
-  <details class="qa"><summary>いつから使えますか？</summary><div class="a"><div>診療所は令和8年（2026年）11月に開業します。中央公民館とコミュニティセンターは令和10年度（2028年度）に利用開始の予定、道の駅は令和14年（2032年）に開業の予定です。</div></div></details>
+  <details class="qa"><summary>いつから使えますか？</summary><div class="a"><div>診療所は令和8年（2026年）12月に開業する予定です。中央公民館とコミュニティセンターは令和10年度（2028年度）に利用開始の予定、道の駅は令和14年（2032年）に開業の予定です。</div></div></details>
   <details class="qa"><summary>道の駅はもっと早くできませんか？</summary><div class="a"><div>いま決まっているのは、令和14年（2032年）の開業予定です。前倒しできないかを検討していますが、まだ決まっていません。決まり次第お知らせします。</div></div></details>
   <details class="qa"><summary>工事はいつまで続きますか？</summary><div class="a"><div>中央公民館の改修は2回に分けて行い、1期（解体と補修）は令和8年度に終わり、2期は令和9年度の予定です。コミュニティセンターは令和8年度に建て替え工事を行い、いまの建物は令和9年度に解体する予定です。駐車場・外構の工事も令和9年度の予定です。</div></div></details>
   <details class="qa"><summary>工事のあいだ、行事や集まりはどこでできますか？</summary><div class="a"><div>代わりの場所と申し込み先は <span class="todo">要確認</span> です。決まり次第お知らせします。</div></div></details>
 
   <h2>施設について</h2>
-  <details class="qa"><summary>診療所は何科ですか？</summary><div class="a"><div>診療所は令和8年（2026年）11月に開業します。診療科目・診療時間は <span class="todo">要確認</span> です。</div></div></details>
+  <details class="qa"><summary>診療所は何科ですか？</summary><div class="a"><div>診療所は令和8年（2026年）12月に開業する予定です。診療科目・診療時間は <span class="todo">要確認</span> です。</div></div></details>
   <details class="qa"><summary>中央公民館の建物は壊すのですか？</summary><div class="a"><div>壊しません。昭和50年（1975年）に完成した建物の良さを残しながら、耐震改修をして使い続けます。建物の周りの縁側のような半屋外の空間も生かします。</div></div></details>
   <details class="qa"><summary>改修後の中央公民館にはどんな部屋ができますか？</summary><div class="a"><div>講堂、活動室、ギャラリー、キッチンスタジオ、事務室などができます。<a href="#facilities">平面図</a>もご覧ください。使い方は、これから地域の声も聞きながら決めていきます。</div></div></details>
   <details class="qa"><summary>新しいコミュニティセンターにはどんな部屋がありますか？</summary><div class="a"><div>鉄筋コンクリート造（一部鉄骨造）の2階建てで、ホールと舞台、会議室、授乳室などを備えます。ホールの客席数は <span class="todo">要確認</span> です。</div></div></details>
@@ -499,11 +666,40 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 
   <h2>参加・意見の出し方</h2>
   <details class="qa"><summary>意見はどこに出せばよいですか？</summary><div class="a"><div>北山文化圏センター事業化推進事業事務局の問い合わせフォームで受け付けます。いただいた意見は、個人が特定されない形で事業の検討に生かします。</div></div></details>
-  <details class="qa"><summary>ワークショップはいつありますか？</summary><div class="a"><div>中央公民館の設計者・丸山欣也さんを迎えた「発見的方法ワークショップ」を、2027年3月12日（金）〜14日（日）の2泊3日で開きます。前夜の11日（木）には、丸山さんのレクチャー（オプション・参加は任意）があります。会場は今帰仁村コミュニティセンター、定員20人（先着順）、参加費は無料で、どなたでも参加できます。<a href="#news/ws">募集のお知らせ</a>をご覧ください。</div></div></details>
+  <details class="qa"><summary>ワークショップはいつありますか？</summary><div class="a"><div>中央公民館の設計者・丸山欣也さんを迎えた「発見的方法ワークショップ」を、2027年3月12日（金）〜14日（日）の2泊3日で開きます。前夜の11日（木）には、丸山さんのレクチャー（オプション・参加は任意）があります。会場は今帰仁村コミュニティセンター、定員20人（先着順）、参加費は無料（宿泊費は1泊 学生500円・一般1,500円）で、どなたでも参加できます。<a href="#news/ws">募集のお知らせ</a>をご覧ください。</div></div></details>
 
   <h2>運営・お金の出どころ</h2>
   <details class="qa"><summary>だれが施設を運営するのですか？</summary><div class="a"><div>施設の管理・運営は、村づくり推進組織が担う予定です。くわしいことが決まり次第お知らせします。</div></div></details>
   <details class="qa"><summary>お金はどこから出ていますか？</summary><div class="a"><div>今帰仁村が事業主体となり、国（内閣府）の「沖縄北部連携促進特別振興事業」の補助金を活用して整備しています。</div></div></details>
+</section>
+
+<!-- ========== 運営の体制 ========== -->
+<section class="page" data-page="org">
+  <h1>運営の体制</h1>
+  <p class="lead">この事業に、だれが、どの役割でかかわっているかです。</p>
+
+  <h2>この事業にかかわる4つの立場</h2>
+  <div class="roles">
+    <div class="card"><span class="role-no">1</span><h3>今帰仁村</h3><p>事業を進める主体です。計画を決め、施設を整えます。</p><p class="when">担当：今帰仁村 企画財政課 <span class="todo">要確認：室の名前を載せるか</span></p></div>
+    <div class="card"><span class="role-no">2</span><h3>北山文化圏センター事業化推進事業事務局</h3><p>このサイトを作成・運営し、事業についてのご意見・ご質問の窓口になります。</p></div>
+    <div class="card"><span class="role-no">3</span><h3>設計・工事</h3><p>村の発注を受けて、建物の設計と工事を行います。</p><p class="when">中央公民館の設計：象設計集団（協力 アトリエ・モビル） <span class="todo">記入：コミュニティセンターの設計者名を載せる場合</span></p></div>
+    <div class="card"><span class="role-no">4</span><h3>施設の管理・運営の担い手</h3><p>村づくり推進組織が、施設の管理・運営を担う予定です。</p><p class="when">決まったことから、このページに書き足します。</p></div>
+  </div>
+
+  <h2>会議の体制</h2>
+  <p>計画づくりは「マスタープラン検討会議」で話し合いながら進めています。くわしくは <a href="#record">検討の記録</a> をご覧ください。</p>
+
+  <h2>施設ごとの問い合わせ先</h2>
+  <div class="table-wrap"><table>
+    <tr><th style="width:12em">施設</th><th>問い合わせ先</th></tr>
+    <tr><td>診療所</td><td><span class="todo">要確認</span></td></tr>
+    <tr><td>中央公民館</td><td><span class="todo">要確認</span></td></tr>
+    <tr><td>コミュニティセンター</td><td><span class="todo">要確認</span></td></tr>
+    <tr><td>道の駅</td><td><span class="todo">要確認</span></td></tr>
+    <tr><td>事業全体・このサイト</td><td>北山文化圏センター事業化推進事業事務局（<a href="#site">お問い合わせ</a>）</td></tr>
+  </table></div>
+
+  <div class="note">このサイトは、今帰仁村の了承を得て、北山文化圏センター事業化推進事業事務局が作成・運営しています。今帰仁村の公式サイトではありません。正式な手続き・申請などは、今帰仁村の公式サイトや窓口でご確認ください。</div>
 </section>
 
 <!-- ========== このサイトについて ========== -->
@@ -555,48 +751,53 @@ const menuBtn = document.querySelector('.menu-btn');
 const TODO = t => `<span class="todo">${t}</span>`;
 const NEWS = [
   { id:'ws', date:'2026-11-27', cat:'募集', pin:true, img:'img/hanyagai.jpg', title:'今帰仁中央公民館「発見的方法ワークショップ」参加者募集（講師：丸山欣也さんほか）',
-    lead:'中央公民館を設計したアトリエ・モビルの丸山欣也さんを迎えて、2泊3日のワークショップを開きます。村を歩いて見つけたことをもとに、これからの中央公民館と北山文化圏センターの使い方を、いっしょに考えます。参加費は無料、どなたでも参加できます。',
+    lead:'中央公民館を設計した建築家の丸山欣也さん（Team ZOO アトリエモビル会長）を迎えて、2泊3日のワークショップを開きます。村を歩いて見つけたことをもとに、これからの中央公民館と北山文化圏センターの使い方を、いっしょに考えます。参加費は無料、どなたでも参加できます。',
     body:`<h3>日程</h3><div class="table-wrap"><table>
 <tr><th style="width:9em">テーマ</th><td>「日陰を作る」――気候・風土・場所の発見</td></tr>
 <tr><th>日程</th><td>2027年3月12日（金）〜14日（日）　<b>2泊3日</b>（12日・13日の2泊）</td></tr>
-<tr><th>＋1日（オプション）</th><td>3月11日（木）夜　前夜の<b>レクチャー</b>（丸山欣也さん）。参加は任意です。${TODO('要確認：会場・11日の宿泊・レクチャーだけの参加の可否と申し込みの要否')}</td></tr>
+<tr><th>＋1日（オプション）</th><td>3月11日（木）夜　前夜の<b>レクチャー</b>（丸山欣也さん）。参加は任意です。前泊（11日の宿泊）もできます。レクチャーの会場などの詳細は、決まり次第このページでお知らせします。</td></tr>
 </table></div>
 <h3>タイムスケジュール（大まかな流れ）</h3><div class="table-wrap"><table>
 <tr><th style="width:9em"></th><th>午前</th><th>午後</th><th>夜</th></tr>
 <tr><th>3/11（木）<br><small>オプション</small></th><td>―</td><td>―</td><td><b>丸山欣也さんのレクチャー</b></td></tr>
-<tr><th>1日目 3/12（金）</th><td>集合・受付、説明</td><td>フィールドワーク（まち歩き・場所や材料探し）</td><td>交流会（宿泊：玉城公民館）</td></tr>
-<tr><th>2日目 3/13（土）</th><td>スケッチ・模型づくり</td><td>制作、中間発表</td><td>スライド会（宿泊：玉城公民館）</td></tr>
+<tr><th>1日目 3/12（金）</th><td>集合・受付、説明</td><td>フィールドワーク（まち歩き・場所や材料探し）、講評</td><td>交流会、丸山さん（アトリエモビル）・杉山さんのレクチャー（宿泊：玉城公民館）</td></tr>
+<tr><th>2日目 3/13（土）</th><td>日陰のワークショップ（スケッチ・模型づくり）</td><td>制作、中間発表</td><td>スライド会、今帰仁の夜市の見学（宿泊：玉城公民館）</td></tr>
 <tr><th>3日目 3/14（日）</th><td>制作の仕上げ</td><td><b>発表・講評</b>、解散</td><td>―</td></tr>
 </table></div>
-<p>${TODO('要確認：各日の時間・内容（講師と確認中）')}</p>
+<p>内容は変わることがあります。各日の時間は、お申し込みの方に、後日あらためてお知らせします。</p>
 <h3>会場・宿泊</h3><div class="table-wrap"><table>
 <tr><th style="width:9em">会場</th><td>今帰仁村コミュニティセンター</td></tr>
-<tr><th>宿泊</th><td>玉城公民館（今帰仁村）</td></tr>
+<tr><th>宿泊</th><td>玉城公民館（今帰仁村）。12日・13日の2泊。希望する方は11日の前泊もできます</td></tr>
+<tr><th>宿泊費</th><td>1泊 学生500円・一般1,500円（2泊で学生1,000円・一般3,000円、前泊を入れた3泊で学生1,500円・一般4,500円）。お支払いの方法は、お申し込みの方に、後日あらためてお知らせします</td></tr>
 </table></div>
-<h3>講師</h3><ul><li><b>丸山 欣也さん</b>（アトリエ・モビル）… 昭和50年（1975年）に完成した中央公民館を、象設計集団とともに設計しました。</li><li><b>杉山 至さん</b>（兵庫県立芸術文化観光専門職大学 准教授、舞台美術家）</li><li><b>浅沼 秀治さん</b> ${TODO('要確認：肩書き')}</li></ul>
-<h3>「発見的方法」とは</h3><p>まちを歩き、目で見て、手で描きながら、その土地にすでにある良さや手がかりを見つけ出し、そこから計画を考えていく方法です。${TODO('要確認：説明文を丸山さんと確かめる')}</p>
-<h3>3日間の流れ（予定）</h3><ol><li><b>歩いて見つける</b> … 中央公民館とそのまわり、村の中を歩き、気になったものを見て・描いて・記録します。</li><li><b>持ち寄って話す</b> … 見つけたことを持ち寄り、建物や場所の使い方の手がかりを探します。</li><li><b>形にして発表する</b> … これからの中央公民館・北山文化圏センターの使い方を、絵や模型にまとめて発表します。</li></ol><p>${TODO('要確認：内容は丸山さんと詰める')}</p>
+<h3>講師</h3><figure style="margin:0 0 12px"><img src="img/ws/maruyama-portrait.jpg" alt="机に向かって話す丸山欣也さん" style="width:100%;max-width:420px;border-radius:8px;display:block"><figcaption class="gallery-cap">丸山欣也さん（写真：ご本人提供）</figcaption></figure><ul><li><b>丸山 欣也さん</b>（建築家、Team ZOO アトリエモビル会長、NPO法人有形デザイン機構理事長）… 昭和50年（1975年）に完成した中央公民館を、象設計集団とともに設計しました。</li><li><b>杉山 至さん</b>（兵庫県立芸術文化観光専門職大学 准教授、舞台美術家）</li><li><b>浅沼 秀治さん</b>（建築家、Team ZOO アトリエモビル代表取締役、NPO法人有形デザイン機構副理事長）</li></ul>
+<h3>「発見的方法」とは</h3><p>まちを歩き、目で見て、手で描きながら、その土地にすでにある良さや手がかりを見つけ出し、そこから計画を考えていく方法です。</p>
+<h3>丸山さんのスケッチから</h3><p>講師の丸山欣也さんが、今回のワークショップを考えながら描いたスケッチです。「日影は生活空間」――光が影を作り、風が通い、そこに暮らしが生まれる。光・風・生の三つを「三ッ巴」として、村の中で見つけていきます。</p>
+<blockquote class="sk-quote">沖縄は影が命を守ります<br>風が生まれて生きる場所が生まれます<br>光は影を作り出して生活の場となります<br>影は光があれば出て、生命を育む</blockquote>
+<div class="gallery sk"><img src="img/ws/maruyama-hikage.jpg" alt="雲が地面に影を落とし、柱や木の影が並ぶペン画。「日影は生活空間」と書かれている"><img src="img/ws/maruyama-wskou.jpg" alt="「今帰仁 WS 考」と題したノート。光・風・生の三つ巴などが水彩で描かれている"></div>
+<p class="gallery-cap">丸山欣也さんのスケッチ（2026年10月。ご本人の許可を得て掲載しています）</p>
+<h3>3日間の流れ（予定）</h3><figure style="margin:0 0 12px"><img src="img/ws/maruyama-walk.jpg" alt="まちを歩く丸山欣也さんと参加者" style="width:100%;max-width:640px;border-radius:8px;display:block"><figcaption class="gallery-cap">まちを歩く丸山欣也さん（写真：ご本人提供）</figcaption></figure><ol><li><b>歩いて見つける</b> … 中央公民館とそのまわり、村の中を歩き、気になったものを見て・描いて・記録します。</li><li><b>持ち寄って話す</b> … 見つけたことを持ち寄り、建物や場所の使い方の手がかりを探します。</li><li><b>形にして発表する</b> … これからの中央公民館・北山文化圏センターの使い方を、絵や模型にまとめて発表します。</li></ol>
 <h3>どんな形にまとめるか</h3><p>講師の企画では、ワークショップの最後のまとめ方を、期間・場所・参加する人に合わせて、次の3つから選びます。</p>
 <div class="forms"><div><b>原寸でつくる</b>見つけた材料で、実際の大きさのものを自分たちで建てる</div><div><b>模型をつくる</b>考えた使い方や空間を、模型にして見せる</div><div><b>スケッチで伝える</b>歩いて描いたスケッチをもとに、絵で発表する</div></div>
-<p>${TODO('要確認：今回どの形にするか（講師と確認）')}</p>
-<h3>これまでのワークショップから</h3><p>講師の企画書に参考として載っている、これまでのワークショップの様子です（写真：浅沼秀治さん提供）。${TODO('要確認：写真をサイトに載せてよいか（浅沼さん）、写っている方への配慮')}</p>
+<p>今回どの形にまとめるかは、講師と参加者で相談しながら決めます。</p>
+<h3>これまでのワークショップから</h3><p>講師の企画書に参考として載っている、これまでのワークショップの様子です（写真：浅沼秀治さん提供。掲載の許可を得ています）。</p>
 <div class="gallery"><img src="img/ws/kominkan-1.jpg" alt="赤い柱の建物の前の芝生で、竹の束を前に作業する参加者"><img src="img/ws/kominkan-2.jpg" alt="中庭で竹を組んで骨組みをつくる様子"><img src="img/ws/kominkan-3.jpg" alt="赤い柱のそばで竹を立てる様子"><img src="img/ws/kominkan-4.jpg" alt="赤い柱が並ぶ半屋外の空間"></div>
-<p class="gallery-cap">竹を組んで、屋外に空間をつくる ${TODO('要確認：場所と年（中央公民館での取り組みか）')}</p>
+<p class="gallery-cap">竹を組んで、屋外に空間をつくる</p>
 <div class="gallery"><img src="img/ws/indonesia-1.jpg" alt="水辺でスケッチをする参加者"><img src="img/ws/indonesia-2.jpg" alt="木の葉や枝で小屋のようなものをつくる参加者"><img src="img/ws/indonesia-3.jpg" alt="地面に並べられたたくさんのスケッチ"></div>
 <p class="gallery-cap">インドネシアの NGO とのワークショップ（歩いて、描いて、つくる）</p>
 <div class="gallery"><img src="img/ws/takao-1.jpg" alt="教室で作業する参加者"><img src="img/ws/takao-2.jpg" alt="黒板に貼り出されたスケッチ"><img src="img/ws/takao-3.jpg" alt="模型を囲んで話す参加者"></div>
 <p class="gallery-cap">高尾山ランドアートワークショップ（スケッチと模型づくり）</p>
 <div class="gallery"><img src="img/ws/butai-1.jpg" alt="劇場の舞台の上で輪になる参加者"><img src="img/ws/butai-2.jpg" alt="壁に貼った絵の前で発表する参加者"></div>
-<p class="gallery-cap">空間に絵を描き、発表する ${TODO('要確認：どこでの取り組みか')}</p>
+<p class="gallery-cap">空間に絵を描き、発表する</p>
 <h3>募集の内容</h3><div class="table-wrap"><table>
 <tr><th style="width:9em">定員</th><td>20人（先着順）</td></tr>
 <tr><th>参加できる人</th><td>どなたでも（村外の方も参加できます）</td></tr>
 <tr><th>参加費</th><td>無料</td></tr>
-<tr><th>持ち物・服装</th><td>歩きやすい服装 ${TODO('要確認：ほかの持ち物（講師に確認）')}</td></tr>
-<tr><th>締め切り</th><td>定員になり次第終了 ${TODO('要確認：締め切り日')}</td></tr>
+<tr><th>持ち物・服装</th><td>歩きやすく、汚れてもよい服装。そのほかの持ち物は、お申し込みの方に、後日あらためてお知らせします。</td></tr>
+<tr><th>締め切り</th><td>定員になり次第終了</td></tr>
 </table></div>
-<h3>申し込みのしかた</h3><p>このサイトの申し込みフォームからお申し込みください。電話・窓口での受付はしていません。</p><p><span class="btn" style="opacity:.6">申し込みフォーム（準備中）</span></p>
-<h3>主催・お問い合わせ</h3><p>主催：今帰仁村 企画財政課<br>お問い合わせ：北山文化圏センター事業化推進事業事務局</p><p>お問い合わせは、このサイトのお問い合わせフォームからお願いします。 ${TODO('準備中：お問い合わせフォーム')}</p>` },
+<h3>申し込みのしかた</h3><p>このサイトの申し込みフォームからお申し込みください。電話・窓口での受付はしていません。</p><p><span class="btn" style="opacity:.6">申し込み・お問い合わせフォーム（準備中）</span></p>
+<h3>主催・お問い合わせ</h3><p>主催：今帰仁村 企画財政課<br>お問い合わせ：北山文化圏センター事業化推進事業事務局</p><p>お問い合わせは、上の申し込みフォームで、最初の「ご用件」に「問い合わせる」を選んでお送りください。</p>` },
   { id:'aisho', date:'2026-11-20', cat:'募集', pin:true, title:'北山文化圏センターの「愛称」を募集します',
     lead:'診療所・中央公民館・コミュニティセンター・道の駅がひとつになる「北山文化圏センター」。村のみなさんが呼びやすく、親しみのもてる「愛称」を募集します。',
     body:`<p>正式な名前は少し長くてかたいので、小さな子どもからお年寄りまで、みんなが口にしたくなる名前を待っています。</p>
@@ -641,10 +842,10 @@ const NEWS = [
     body:`<h3>古くなった建物</h3><p>中央公民館は完成から50年、コミュニティセンターは開館から40年以上がたち、設備の不具合も増えていました。中央公民館は建物の良さを残して改修し、コミュニティセンターは新しい建物に建て替えます。</p>
 <h3>まとめると何が良くなるか</h3><ul><li><b>診療所</b> … 村の身近な医療の拠点</li><li><b>中央公民館</b> … 50年使われてきた建物を生かした、新しい活動とにぎわいの場</li><li><b>コミュニティセンター</b> … ホールと舞台を備えた、村の大きな集まりの場</li><li><b>道の駅</b> … 今帰仁の食と産業を伝え、訪れる人と村をつなぐ場</li></ul>
 <p>村は、北山文化圏センターを、地域・命・世代・文化をつなぐ「つながりの拠点」と位置づけています。</p>
-<h3>いつから使えるか</h3><p>診療所は令和8年（2026年）11月、中央公民館とコミュニティセンターは令和10年度（2028年度）、道の駅は令和14年（2032年）の予定です。くわしくは<a href="#progress">スケジュールと進捗</a>をご覧ください。</p>
+<h3>いつから使えるか</h3><p>診療所は令和8年（2026年）12月、中央公民館とコミュニティセンターは令和10年度（2028年度）、道の駅は令和14年（2032年）の予定です。くわしくは<a href="#progress">スケジュールと進捗</a>をご覧ください。</p>
 <h3>どこにできるか</h3><p>今帰仁村仲宗根・玉城の一帯で、北部製糖の敷地内とその周辺です。</p>` },
-  { id:'shinryojo', date:'2026-11-04', cat:'診療所', title:'診療所は11月に開業します',
-    lead:'北山文化圏センターの最初の施設として、診療所が令和8年（2026年）11月に開業します。',
+  { id:'shinryojo', date:'2026-11-04', cat:'診療所', title:'診療所は12月に開業する予定です',
+    lead:'北山文化圏センターの最初の施設として、診療所が令和8年（2026年）12月に開業する予定です。',
     body:`<p>開業日、診療科目、診療時間は ${TODO('要確認：診療所の案内に合わせる')} です。</p><p>中央公民館とコミュニティセンターは令和10年度、道の駅は令和14年の予定で、施設は順に開いていきます。</p>` },
   { id:'open', date:'2026-11-04', cat:'サイト', title:'情報サイトを開設しました',
     lead:'北山文化圏センター整備事業の全体像と進み具合を、村のみなさんにわかりやすくお伝えするため、このサイトを開設しました。',
@@ -683,6 +884,13 @@ function show(){
 }
 renderNews();
 window.addEventListener('hashchange', show);
+// ページ内の移動（「くわしく ↓」など）。ページの切り替えは起こさない
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-scroll]');
+  if(!a) return;
+  e.preventDefault();
+  document.getElementById(a.dataset.scroll)?.scrollIntoView({behavior:'smooth', block:'start'});
+});
 menuBtn.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuBtn.setAttribute('aria-expanded', open);
@@ -692,7 +900,7 @@ menuBtn.addEventListener('click', () => {
 const START = 2026, YEARS = 7;
 const pos = (y, m) => ((y - START) * 12 + (m - 4)) / (YEARS * 12) * 100; // 年と月 → 横位置(%)
 const rows = [
-  { name:'診療所', bars:[['run',2026,11,2033,3,'運営']], open:[2026,11] },
+  { name:'診療所', bars:[['run',2026,12,2033,3,'運営']], open:[2026,12] },
   { name:'中央公民館', bars:[['build',2026,4,2027,3,'改修1期'],['build',2027,4,2028,3,'改修2期'],['run',2028,4,2033,3,'運営']], open:[2028,4] },
   { name:'コミュニティセンター', bars:[['build',2026,4,2027,3,'建て替え工事'],['build',2027,4,2028,3,'旧館の解体'],['run',2028,4,2033,3,'運営']], open:[2028,4] },
   { name:'駐車場・外構', bars:[['build',2027,4,2028,3,'駐車場・外構']], open:[2028,4] },
@@ -710,7 +918,7 @@ rows.forEach(r => {
   });
   html += `<div class="g-open" style="left:${pos(...r.open)}%" title="開業・利用開始">開</div></div></div>`;
 });
-html += `<div class="g-now" style="left:calc(180px + (100% - 180px) * ${pos(2026,10)/100})"><span>今ここ（2026年10月）</span></div>`;
+html += `<div class="g-now" style="left:calc(180px + (100% - 180px) * ${pos(2026,11)/100})"><span>今ここ（2026年11月）</span></div>`;
 g.innerHTML = html;
 
 show();
