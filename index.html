@@ -6,14 +6,16 @@
 <title>北山文化圏センター 情報サイト（試作）</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#fbfaf7; --surface:#ffffff; --ink:#1f2a33; --muted:#5a6872; --line:#e3e0d8;
-  --main:#1d5a6e;        /* 海の青緑 */
-  --main-soft:#e6f0f2;
-  --accent:#b8492f;      /* 赤瓦 */
-  --accent-soft:#f7e9e4;
+  --main:#ad5230;        /* 赤と橙の中間（文字・線・ボタン。白い文字が読める濃さ） */
+  --main-soft:#fbe9e0;   /* 同じ色のごく薄い地 */
+  --nav-on:#f4b89e;      /* 薄い赤橙（メニューの選択中） */
+  --nav-on-ink:#4d2010;
+  --accent:#8f3a1f;      /* 深い赤瓦 */
+  --accent-soft:#f6e3d8;
   --done:#2f7d4f; --doing:#c98a12; --todo:#9aa5ad;
   --todo-mark:#fff8e1;
 }
@@ -38,7 +40,7 @@ header{background:var(--surface);border-bottom:1px solid var(--line);position:st
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
 nav a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500}
 nav a:hover{background:var(--main-soft)}
-nav a[aria-current="page"]{background:var(--main);color:#fff}
+nav a[aria-current="page"]{background:var(--nav-on);color:var(--nav-on-ink);font-weight:700}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:8px 12px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
 @media (max-width:820px){
   .menu-btn{display:block}
@@ -117,7 +119,7 @@ th{background:var(--main-soft);font-weight:700}
 .g-years{display:grid;grid-template-columns:repeat(7,1fr)}
 .g-years span{text-align:center;border-left:1px solid var(--line);line-height:1.3}
 .g-bar{position:absolute;top:12px;height:22px;border-radius:5px;font-size:.72rem;color:#fff;display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden}
-.g-plan{background:#8fb3bd}
+.g-plan{background:#e7b49c;color:#4d2010}
 .g-build{background:var(--doing)}
 .g-run{background:var(--done);padding-left:22px}
 .g-open{position:absolute;top:8px;width:30px;height:30px;margin-left:-15px;border-radius:50%;background:var(--accent);color:#fff;font-size:.68rem;display:grid;place-items:center;font-weight:700;box-shadow:0 0 0 3px #fff}
@@ -224,9 +226,83 @@ details.qa .a::before{content:"A";color:var(--accent);font-weight:700}
 .role-no{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--main);color:#fff;font-weight:700;font-size:.85rem;margin-bottom:6px}
 @media (min-width:821px){nav a{padding:6px 10px;font-size:.88rem}}
 
-footer{background:#22323b;color:#d8e0e4;font-size:.85rem;padding:28px 0}
+/* ===== 今帰仁らしさの見た目（試作。.dz のページだけ） ===== */
+:root{ --kawara:#b8492f; --kibi:#5e8a3a; --umi:#2a6a80; --kokuto:#8a5a2b; --washi:#f6f0e6; --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif; }
+.dz h1,.dz h2,.dz h3{font-family:var(--mincho);letter-spacing:.04em}
+.dz h2{border-left:0;padding-left:0;display:flex;align-items:center;gap:14px;font-size:1.55rem;margin-top:52px}
+.dz h2::before{content:"";flex:none;width:23px;height:28px;background:linear-gradient(90deg,var(--kawara) 0 5px,transparent 5px 9px,var(--kawara) 9px 14px,transparent 14px 18px,var(--kawara) 18px 23px);clip-path:polygon(0 18%,100% 0,100% 100%,0 100%)}
+.dz h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#d8c7b0,transparent)}
+.dz .top-news-head h2::after{display:none}
+@media (max-width:600px){.dz h2{font-size:1.25rem;gap:10px;margin-top:40px}.dz h2::before{width:18px;height:22px}.dz > h1{font-size:1.6rem}}
+.ishi{height:36px;margin:46px 0 6px;background-size:183px 36px !important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='26' viewBox='0 0 132 26'%3E%3Cg fill='%23efe6d8' stroke='%23c8b59c' stroke-width='1.2'%3E%3Cpath d='M2 13 Q3 3 14 3 L27 4 Q31 9 29 13 Q28 22 17 23 L6 22 Q1 19 2 13Z'/%3E%3Cpath d='M33 6 Q35 2 46 3 L58 3 Q62 5 61 11 L49 13 Q36 13 33 6Z'/%3E%3Cpath d='M33 16 Q38 14 50 15 L60 15 Q63 19 60 23 L40 24 Q33 22 33 16Z'/%3E%3Cpath d='M65 4 Q76 2 88 4 Q92 12 89 20 Q80 24 69 22 Q63 14 65 4Z'/%3E%3Cpath d='M93 3 L112 3 Q116 6 114 12 L96 13 Q91 9 93 3Z'/%3E%3Cpath d='M93 16 L106 15 Q109 19 107 23 L96 23 Q92 20 93 16Z'/%3E%3Cpath d='M111 16 Q113 14 120 15 L130 15 L130 23 L114 23 Q110 20 111 16Z'/%3E%3Cpath d='M118 4 L130 3 L130 11 L119 12 Q116 8 118 4Z'/%3E%3C/g%3E%3C/svg%3E") repeat-x left center/183px 36px;opacity:.85}
+/* トップの大きな絵 */
+.dz .hero{min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;padding:56px 44px 40px;border-radius:4px}
+.dz .hero .btn{align-self:flex-start;position:relative;z-index:1}
+.dz .hero h1{font-size:2.55rem;line-height:1.45;font-weight:800;text-shadow:0 2px 14px rgba(0,0,0,.25)}
+.dz .hero .eyebrow{position:relative;z-index:1;font-family:var(--mincho);font-size:.92rem;letter-spacing:.32em;opacity:.92;margin:0 0 12px;display:flex;align-items:center;gap:12px}
+.dz .hero .eyebrow::before{content:"";width:34px;height:2px;background:#f4c9a8}
+.dz .hero .tate{position:absolute;right:30px;top:34px;z-index:1;writing-mode:vertical-rl;font-family:var(--mincho);font-size:1.02rem;letter-spacing:.5em;opacity:.85;border-left:1px solid rgba(255,255,255,.45);padding-left:12px}
+@media (max-width:700px){.dz .hero{min-height:380px;padding:40px 22px 28px}.dz .hero h1{font-size:1.5rem}.dz .hero .eyebrow{font-size:.78rem;letter-spacing:.18em}.dz .hero .tate{display:none}}
+/* 進み具合のカード */
+.dz .status-grid .card{border:0;border-top:5px solid var(--c);border-radius:0 0 8px 8px;background:#fff;box-shadow:0 1px 0 #e7dccb,0 8px 18px -12px rgba(80,50,20,.25)}
+.dz .status-grid .card h3{font-size:1.15rem}
+.dz .status-grid .card .steps span.on{background:var(--c)}
+.dz .status-grid .card:nth-child(1){--c:var(--kibi)} .dz .status-grid .card:nth-child(2){--c:var(--kawara)} .dz .status-grid .card:nth-child(3){--c:var(--umi)} .dz .status-grid .card:nth-child(4){--c:var(--kokuto)}
+/* 4つの施設のカード */
+.dz .fac{border:0;border-radius:4px;background:#fff;box-shadow:0 10px 24px -16px rgba(80,50,20,.45);transition:transform .2s}
+.dz .fac:hover{transform:translateY(-3px)}
+.dz .fac img,.dz .fac > div:first-child{height:190px !important}
+.dz .fac svg{height:190px !important}
+.dz .fac div.body{padding:16px 20px 18px;border-top:4px solid var(--c)}
+.dz .fac b{font-family:var(--mincho);font-size:1.25rem;letter-spacing:.06em}
+.dz .fac-grid .fac:nth-child(1){--c:var(--kibi)} .dz .fac-grid .fac:nth-child(2){--c:var(--kawara)} .dz .fac-grid .fac:nth-child(3){--c:var(--umi)} .dz .fac-grid .fac:nth-child(4){--c:var(--kokuto)}
+/* 施設の紹介：施設ごとの見出し */
+.fac-head{position:relative;margin:58px 0 18px;min-height:250px;border-radius:4px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:26px 30px;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(20,14,8,.72) 100%),var(--img) center/cover,var(--c)}
+.fac-head.noimg{min-height:190px;padding-top:78px;padding-bottom:58px;color:var(--ink);background:var(--washi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='26' viewBox='0 0 132 26'%3E%3Cg fill='%23efe6d8' stroke='%23c8b59c' stroke-width='1.2'%3E%3Cpath d='M2 13 Q3 3 14 3 L27 4 Q31 9 29 13 Q28 22 17 23 L6 22 Q1 19 2 13Z'/%3E%3Cpath d='M33 6 Q35 2 46 3 L58 3 Q62 5 61 11 L49 13 Q36 13 33 6Z'/%3E%3Cpath d='M33 16 Q38 14 50 15 L60 15 Q63 19 60 23 L40 24 Q33 22 33 16Z'/%3E%3Cpath d='M65 4 Q76 2 88 4 Q92 12 89 20 Q80 24 69 22 Q63 14 65 4Z'/%3E%3Cpath d='M93 3 L112 3 Q116 6 114 12 L96 13 Q91 9 93 3Z'/%3E%3Cpath d='M93 16 L106 15 Q109 19 107 23 L96 23 Q92 20 93 16Z'/%3E%3Cpath d='M111 16 Q113 14 120 15 L130 15 L130 23 L114 23 Q110 20 111 16Z'/%3E%3Cpath d='M118 4 L130 3 L130 11 L119 12 Q116 8 118 4Z'/%3E%3C/g%3E%3C/svg%3E") repeat-x left bottom 10px/183px 36px;border-top:5px solid var(--c)}
+.fac-head .no{position:absolute;top:14px;left:22px;font-family:var(--mincho);font-size:3.2rem;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.9)}
+.fac-head.noimg .no{-webkit-text-stroke:1.5px var(--c)}
+.fac-head h2{margin:0;font-size:2rem;color:inherit;display:block}
+.fac-head h2::before,.fac-head h2::after{display:none}
+.fac-head p{margin:4px 0 0;font-size:.95rem;opacity:.95}
+.fac-head small{position:absolute;right:14px;bottom:10px;font-size:.72rem;opacity:.8}
+.fac-head.c-kibi{--c:var(--kibi)} .fac-head.c-kawara{--c:var(--kawara)} .fac-head.c-umi{--c:var(--umi)} .fac-head.c-kokuto{--c:var(--kokuto)}
+@media (max-width:600px){.fac-head{min-height:220px;padding:64px 18px 18px;flex-wrap:wrap;align-content:flex-end}.fac-head h2{font-size:1.5rem}.fac-head .no{font-size:2.3rem}.fac-head small{position:static;flex-basis:100%;margin-top:8px}.fac-head.noimg{padding-top:64px}}
+/* ページの頭：題の下に石積みの帯 */
+.dz > h1{font-size:2.05rem;font-weight:800;margin-top:6px}
+.dz > h1 + .lead{margin-bottom:8px}
+.dz > h1 + .lead::after{content:"";display:block;height:36px;margin-top:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='26' viewBox='0 0 132 26'%3E%3Cg fill='%23efe6d8' stroke='%23c8b59c' stroke-width='1.2'%3E%3Cpath d='M2 13 Q3 3 14 3 L27 4 Q31 9 29 13 Q28 22 17 23 L6 22 Q1 19 2 13Z'/%3E%3Cpath d='M33 6 Q35 2 46 3 L58 3 Q62 5 61 11 L49 13 Q36 13 33 6Z'/%3E%3Cpath d='M33 16 Q38 14 50 15 L60 15 Q63 19 60 23 L40 24 Q33 22 33 16Z'/%3E%3Cpath d='M65 4 Q76 2 88 4 Q92 12 89 20 Q80 24 69 22 Q63 14 65 4Z'/%3E%3Cpath d='M93 3 L112 3 Q116 6 114 12 L96 13 Q91 9 93 3Z'/%3E%3Cpath d='M93 16 L106 15 Q109 19 107 23 L96 23 Q92 20 93 16Z'/%3E%3Cpath d='M111 16 Q113 14 120 15 L130 15 L130 23 L114 23 Q110 20 111 16Z'/%3E%3Cpath d='M118 4 L130 3 L130 11 L119 12 Q116 8 118 4Z'/%3E%3C/g%3E%3C/svg%3E") repeat-x left center/183px 36px;opacity:.85}
+/* 記録・体制・見本のカード */
+.dz .card.rec,.dz .roles .card{border:0;border-left:5px solid var(--kawara);border-radius:0 8px 8px 0;background:#fff;box-shadow:0 8px 18px -14px rgba(80,50,20,.35)}
+.dz .card.rec.sample{border-left-style:dashed;border-left-color:#cdbba3}
+.dz .roles .card:nth-child(1){border-left-color:var(--umi)} .dz .roles .card:nth-child(2){border-left-color:var(--kawara)} .dz .roles .card:nth-child(3){border-left-color:var(--kokuto)} .dz .roles .card:nth-child(4){border-left-color:var(--kibi)}
+.dz .role-no{background:transparent;color:var(--kokuto);font-family:var(--mincho);font-size:1.6rem;font-weight:800;width:auto;height:auto}
+.dz .rec-dl dt{font-family:var(--mincho);color:var(--kokuto)}
+/* 年表・経緯 */
+.dz .timeline{border-left-color:#e7d6c2}
+.dz .timeline b{font-family:var(--mincho);font-size:.95rem}
+.dz .gantt,.dz .lanes{border:0;border-radius:4px;box-shadow:0 8px 18px -14px rgba(80,50,20,.35)}
+.dz .lane-name{font-family:var(--mincho);font-size:1rem}
+/* お知らせ・記事・よくある質問 */
+.dz .ncard{border:0;border-radius:4px;box-shadow:0 10px 22px -16px rgba(80,50,20,.45)}
+.dz .ncard b{font-family:var(--mincho);font-size:1.05rem}
+.dz .news li a{font-weight:500}
+.dz .article h1{font-size:1.9rem;line-height:1.5}
+.dz .article h3{font-family:var(--mincho);border-bottom:1px dotted #cdbba3}
+.dz .article .lead{background:var(--washi);border-left:4px solid var(--kawara);border-radius:0 8px 8px 0}
+.dz details.qa{border:0;border-bottom:1px dotted #cdbba3;border-radius:0;background:transparent;margin:0}
+.dz details.qa summary::before{font-family:var(--mincho);font-size:1.15rem}
+.dz details.qa .a::before{font-family:var(--mincho);font-size:1.15rem}
+.dz .faq-group h2{font-size:1.3rem}
+.dz .note{background:var(--washi);border-left:4px solid var(--kokuto);border-radius:0 8px 8px 0}
+.dz .forms div{background:var(--washi)}
+.dz .forms b{font-family:var(--mincho)}
+.dz table{background:transparent;border:0}
+.dz th,.dz td{border:0;border-bottom:1px dotted #cdbba3;padding:12px 10px}
+.dz th{background:transparent;font-family:var(--mincho);color:var(--kokuto);font-weight:700}
+
+footer{background:#3b2a24;color:#efe2db;font-size:.85rem;padding:28px 0}
 footer a{color:#fff}
-footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
+footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
 .gallery.sk{grid-template-columns:3fr 2fr;align-items:start}.gallery.sk img{aspect-ratio:auto;object-fit:contain;background:#fff}@media(max-width:560px){.gallery.sk{grid-template-columns:1fr}}
 .sk-quote{margin:.5em 0 1em;padding:.6em 1em;border-left:3px solid #b8492f;background:#faf6f2;font-family:"Noto Serif JP",serif;line-height:1.9}
 </style>
@@ -239,9 +315,9 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <path d="M0 72 C 160 82, 330 60, 600 34" stroke="#fff" stroke-width="2" stroke-dasharray="14 10" fill="none"/>
     <text x="18" y="52" font-size="15" fill="#5a6872">国道</text>
     <path d="M150 84 C 140 180, 130 280, 118 380" stroke="#c9cfd2" stroke-width="12" fill="none"/>
-    <rect x="178" y="98" width="320" height="270" rx="14" fill="#fff" fill-opacity=".55" stroke="#1d5a6e" stroke-width="1.5" stroke-dasharray="6 5"/>
-    <text x="190" y="360" font-size="13" fill="#1d5a6e" font-weight="700">北山文化圏センター</text>
-    <rect x="196" y="110" width="118" height="62" rx="6" fill="#1d5a6e"/>
+    <rect x="178" y="98" width="320" height="270" rx="14" fill="#fff" fill-opacity=".55" stroke="#ad5230" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="190" y="360" font-size="13" fill="#ad5230" font-weight="700">北山文化圏センター</text>
+    <rect x="196" y="110" width="118" height="62" rx="6" fill="#7a6359"/>
     <text x="255" y="146" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">コミュニティ</text>
     <text x="255" y="163" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">センター</text>
     <rect x="196" y="186" width="124" height="96" rx="6" fill="#b8492f"/>
@@ -249,9 +325,9 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <text x="258" y="240" font-size="14" fill="#7a2c1b" text-anchor="middle" font-weight="700">中央公民館</text>
     <rect x="214" y="296" width="96" height="44" rx="6" fill="#2f7d4f"/>
     <text x="262" y="323" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">診療所</text>
-    <rect x="338" y="96" width="112" height="196" rx="8" fill="#f7e9e4" stroke="#b8492f" stroke-width="2.5" stroke-dasharray="8 6"/>
-    <text x="394" y="186" font-size="16" fill="#b8492f" text-anchor="middle" font-weight="700">道の駅</text>
-    <text x="394" y="206" font-size="13" fill="#b8492f" text-anchor="middle">（予定地）</text>
+    <rect x="338" y="96" width="112" height="196" rx="8" fill="#fdf0e2" stroke="#c46a1c" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="394" y="186" font-size="16" fill="#a2560f" text-anchor="middle" font-weight="700">道の駅</text>
+    <text x="394" y="206" font-size="13" fill="#a2560f" text-anchor="middle">（予定地）</text>
     <rect x="468" y="80" width="132" height="300" fill="#d5dadd"/>
     <text x="534" y="222" font-size="14" fill="#3d4a52" text-anchor="middle" font-weight="700">北部製糖</text>
     <text x="534" y="240" font-size="13" fill="#3d4a52" text-anchor="middle">今帰仁工場</text>
@@ -288,8 +364,10 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 <main class="wrap">
 
 <!-- ========== トップ ========== -->
-<section class="page" id="page-top" data-page="top">
+<section class="page dz" id="page-top" data-page="top">
   <div class="hero">
+    <span class="tate">今帰仁村　仲宗根・玉城</span>
+    <p class="eyebrow">今帰仁村　北山文化圏センター整備事業</p>
     <h1>歴史と未来をつなぐ、<br>つながりの拠点。</h1>
     <p>北山文化圏センターは、北部製糖の敷地内とその周りに、診療所・中央公民館・コミュニティセンター・道の駅の4つの施設をひとつのまとまりとして整える今帰仁村の事業です。地域・命・世代・文化をつなぎ、ずっと暮らし続けられる村をめざします。</p>
     <a class="btn light" href="#about">事業のあらましを見る</a>
@@ -320,6 +398,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <figcaption>完成イメージ（中央公民館・コミュニティセンター・駐車場）出典：今帰仁村</figcaption>
   </figure>
 
+  <div class="ishi" aria-hidden="true"></div>
   <h2>いまの進み具合</h2>
   <p class="updated">2026年11月現在</p>
   <div class="status-grid">
@@ -359,6 +438,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <p style="margin-top:14px"><a href="#progress">スケジュールと進捗をくわしく見る →</a></p>
 
 
+  <div class="ishi" aria-hidden="true"></div>
   <h2>4つの施設</h2>
   <div class="fac-grid">
     <a class="fac" href="#facilities"><img src="img/shinryojo-hokencenter.jpg" alt="診療所が入った建物（保健センターだったころ）" style="display:block;width:100%;height:130px;object-fit:cover"><div class="body"><b>診療所</b><p>村の身近な医療の拠点</p></div></a>
@@ -369,7 +449,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== 事業について ========== -->
-<section class="page" data-page="about">
+<section class="page dz" data-page="about">
   <h1>事業について</h1>
   <p class="lead">北山文化圏センターが何をつくり、なぜ必要なのかをまとめました。</p>
 
@@ -422,26 +502,18 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== 施設の紹介 ========== -->
-<section class="page" data-page="facilities">
+<section class="page dz" data-page="facilities">
   <h1>施設の紹介</h1>
   <p class="lead">4つの施設の役割と、開く時期です。</p>
 
-  <h2>診療所</h2>
-  <figure class="photo">
-    <img src="img/shinryojo-hokencenter.jpg" style="max-width:640px" alt="芝生の広場の奥に建つ、赤い瓦屋根の平屋の建物">
-    <figcaption>診療所が入った建物（保健センターだったころ、2025年7月）</figcaption>
-  </figure>
+  <header class="fac-head c-kibi" style="--img:url(img/shinryojo-hokencenter.jpg)"><span class="no">01</span><div><h2>診療所</h2><p>村の身近な医療の拠点</p></div><small>診療所が入った建物（保健センターだったころ、2025年7月）</small></header>
   <div class="table-wrap"><table>
     <tr><th style="width:9em">開業</th><td>令和8年（2026年）11月2日（今帰仁診療所が移転）</td></tr>
     <tr><th>役割</th><td>村の身近な医療の拠点</td></tr>
     <tr><th>診療の案内</th><td>診療科目・診療時間などは、<a href="https://nakijinsin.com/" target="_blank" rel="noopener">今帰仁診療所のサイト</a>をご覧ください。</td></tr>
   </table></div>
 
-  <h2>中央公民館</h2>
-  <figure class="photo">
-    <img src="img/kominkan-nakaniwa.jpg" style="max-width:640px" alt="屋根の上から見た中央公民館。赤い柱が弧を描いて並び、芝生の中庭を囲む">
-    <figcaption>中央公民館と芝生の中庭（改修前、2024年10月）</figcaption>
-  </figure>
+  <header class="fac-head c-kawara" style="--img:url(img/kominkan-nakaniwa.jpg)"><span class="no">02</span><div><h2>中央公民館</h2><p>50年使われてきた建物を生かし、新しい活動とにぎわいの場に</p></div><small>中央公民館と芝生の中庭（改修前、2024年10月）</small></header>
   <div class="gallery">
     <img src="img/kominkan-hashira3.jpg" alt="中庭に立つ3本の赤い柱。上にシーサーがのる">
     <img src="img/kominkan-hashira.jpg" alt="中庭に面して並ぶ赤い柱">
@@ -461,7 +533,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <figcaption>改修後の平面図（2期工事）。押すと大きく開きます。出典：今帰仁村 中央公民館改修工事</figcaption>
   </figure>
 
-  <h2>コミュニティセンター</h2>
+  <header class="fac-head c-umi" style="--img:url(img/komisen-mokei-zentai.jpg)"><span class="no">03</span><div><h2>コミュニティセンター</h2><p>ホールを備えた、村の集まりの場</p></div><small>新しいコミュニティセンターの模型（2026年5月）</small></header>
   <figure class="photo">
     <img src="img/komisen-sketch.jpg" style="width:100%;max-width:420px;background:#fff" alt="新しいコミュニティセンターのスケッチ。2階建ての建物と、中央公民館側に広がる外の空間">
     <figcaption>新しいコミュニティセンターのスケッチ 出典：広報なきじん 2026年7月号（今帰仁村）</figcaption>
@@ -483,7 +555,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <tr><th>役割</th><td>敬老会や発表会など、村の大きな集まりの場</td></tr>
   </table></div>
 
-  <h2>道の駅</h2>
+  <header class="fac-head noimg c-kokuto"><span class="no">04</span><div><h2>道の駅</h2><p>今帰仁の食と産業を伝え、訪れる人と村をつなぐ場</p></div></header>
   <figure class="photo">
     <div style="max-width:640px;border:1px solid var(--line);border-radius:10px;overflow:hidden"><svg style="display:block;width:100%;height:auto" viewBox="0 0 600 380" role="img" aria-label="道の駅の予定地の位置図。国道に面し、中央公民館の東どなり、北部製糖の工場とのあいだ"><use href="#michi-map"/></svg></div>
     <figcaption>道の駅の予定地（略図）。国道に面し、中央公民館の東どなりにあたります。場所はおおよそで、範囲や建物の配置はこれから決めます。</figcaption>
@@ -496,7 +568,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== スケジュールと進捗 ========== -->
-<section class="page" data-page="progress">
+<section class="page dz" data-page="progress">
   <h1>スケジュールと進捗</h1>
   <p class="lead">施設ごとの予定と、いまどこまで進んでいるかです。</p>
   <p class="updated">最終更新：2026年11月◯日</p>
@@ -505,7 +577,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <div class="gantt">
     <div class="g-inner" id="gantt"></div>
     <div class="legend">
-      <span><i style="background:#8fb3bd"></i>計画・設計</span>
+      <span><i style="background:#e7b49c"></i>計画・設計</span>
       <span><i style="background:var(--doing)"></i>工事・準備</span>
       <span><i style="background:var(--done)"></i>運営</span>
       <span><i style="background:var(--accent);border-radius:50%"></i>開業・利用開始</span>
@@ -536,7 +608,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== 検討の記録 ========== -->
-<section class="page" data-page="record">
+<section class="page dz" data-page="record">
   <h1>検討の記録</h1>
   <p class="lead">計画づくりの節目と、会議の開催の記録です。</p>
   <p class="updated">最終更新：2026年11月◯日</p>
@@ -610,7 +682,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== みんなで考える ========== -->
-<section class="page" data-page="voice">
+<section class="page dz" data-page="voice">
   <h1>みんなで考える</h1>
   <p class="lead">ワークショップや意見募集のご案内と、いただいた声のまとめです。</p>
 
@@ -667,7 +739,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== お知らせ ========== -->
-<section class="page" data-page="news">
+<section class="page dz" data-page="news">
   <h1>お知らせ</h1>
   <p class="lead">工事の進み具合、募集、読みもの（事業や地域のことを知る記事）をお届けします。</p>
   <p class="updated"><span class="todo">試作：日付は公開する日に付け直します</span></p>
@@ -677,13 +749,13 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== お知らせの記事 ========== -->
-<section class="page" data-page="article">
+<section class="page dz" data-page="article">
   <a class="back" href="#news">← お知らせ一覧へ</a>
   <article class="article" id="article"></article>
 </section>
 
 <!-- ========== よくある質問 ========== -->
-<section class="page" data-page="faq">
+<section class="page dz" data-page="faq">
   <h1>よくある質問</h1>
   <p class="lead">村のみなさんから寄せられそうな質問に、いま決まっていることでお答えします。決まっていないことは「まだ決まっていません」とお伝えし、決まり次第、更新します。</p>
   <p class="updated">最終更新：2026年◯月◯日</p>
@@ -722,7 +794,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== 運営の体制 ========== -->
-<section class="page" data-page="org">
+<section class="page dz" data-page="org">
   <h1>運営の体制</h1>
   <p class="lead">この事業に、だれが、どの役割でかかわっているかです。</p>
 
@@ -744,7 +816,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </section>
 
 <!-- ========== このサイトについて ========== -->
-<section class="page" data-page="site">
+<section class="page dz" data-page="site">
   <h1>このサイトについて</h1>
   <p class="lead">このサイトの運営と、お問い合わせ先です。</p>
 
