@@ -232,6 +232,32 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="michi-map" viewBox="0 0 600 380">
+    <rect x="0" y="0" width="600" height="380" fill="#eef3ea"/>
+    <path d="M0 72 C 160 82, 330 60, 600 34" stroke="#b9c0c4" stroke-width="26" fill="none"/>
+    <path d="M0 72 C 160 82, 330 60, 600 34" stroke="#fff" stroke-width="2" stroke-dasharray="14 10" fill="none"/>
+    <text x="18" y="52" font-size="15" fill="#5a6872">国道</text>
+    <path d="M150 84 C 140 180, 130 280, 118 380" stroke="#c9cfd2" stroke-width="12" fill="none"/>
+    <rect x="178" y="98" width="320" height="270" rx="14" fill="#fff" fill-opacity=".55" stroke="#1d5a6e" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="190" y="360" font-size="13" fill="#1d5a6e" font-weight="700">北山文化圏センター</text>
+    <rect x="196" y="110" width="118" height="62" rx="6" fill="#1d5a6e"/>
+    <text x="255" y="146" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">コミュニティ</text>
+    <text x="255" y="163" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">センター</text>
+    <rect x="196" y="186" width="124" height="96" rx="6" fill="#b8492f"/>
+    <rect x="216" y="206" width="84" height="56" rx="4" fill="#e9f0e2"/>
+    <text x="258" y="240" font-size="14" fill="#7a2c1b" text-anchor="middle" font-weight="700">中央公民館</text>
+    <rect x="214" y="296" width="96" height="44" rx="6" fill="#2f7d4f"/>
+    <text x="262" y="323" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">診療所</text>
+    <rect x="338" y="96" width="112" height="196" rx="8" fill="#f7e9e4" stroke="#b8492f" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="394" y="186" font-size="16" fill="#b8492f" text-anchor="middle" font-weight="700">道の駅</text>
+    <text x="394" y="206" font-size="13" fill="#b8492f" text-anchor="middle">（予定地）</text>
+    <rect x="468" y="80" width="132" height="300" fill="#d5dadd"/>
+    <text x="534" y="222" font-size="14" fill="#3d4a52" text-anchor="middle" font-weight="700">北部製糖</text>
+    <text x="534" y="240" font-size="13" fill="#3d4a52" text-anchor="middle">今帰仁工場</text>
+    <g transform="translate(560 120)"><path d="M0 -22 L8 4 L0 -2 L-8 4 Z" fill="#3d4a52"/><text x="0" y="20" font-size="13" fill="#3d4a52" text-anchor="middle">北</text></g>
+  </symbol>
+</svg>
 
 <div class="proto">役場確認用の試作です。黄色い点線の印は、確認してから決める箇所です。</div>
 
@@ -335,10 +361,10 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
 
   <h2>4つの施設</h2>
   <div class="fac-grid">
-    <a class="fac" href="#facilities"><div class="ph">写真：診療所</div><div class="body"><b>診療所</b><p>村の身近な医療の拠点</p></div></a>
+    <a class="fac" href="#facilities"><img src="img/shinryojo-hokencenter.jpg" alt="診療所が入った建物（保健センターだったころ）" style="display:block;width:100%;height:130px;object-fit:cover"><div class="body"><b>診療所</b><p>村の身近な医療の拠点</p></div></a>
     <a class="fac" href="#facilities"><img src="img/kominkan-nakaniwa.jpg" alt="赤い柱が並ぶ中央公民館と芝生の中庭" style="display:block;width:100%;height:130px;object-fit:cover"><div class="body"><b>中央公民館</b><p>50年使われてきた建物を生かし、新しい活動とにぎわいの場に</p></div></a>
     <a class="fac" href="#facilities"><img src="img/komisen-sketch.jpg" alt="新しいコミュニティセンターのスケッチ" style="display:block;width:100%;height:130px;object-fit:contain;background:#fff"><div class="body"><b>コミュニティセンター</b><p>ホールを備えた、村の集まりの場</p></div></a>
-    <a class="fac" href="#facilities"><div class="ph">図：道の駅</div><div class="body"><b>道の駅</b><p>今帰仁の食と産業を伝え、訪れる人と村をつなぐ場</p></div></a>
+    <a class="fac" href="#facilities"><div style="height:130px;overflow:hidden;background:#eef3ea"><svg style="display:block;width:100%;height:130px" preserveAspectRatio="xMidYMid slice" viewBox="0 0 600 380" role="img" aria-label="道の駅の予定地の位置図。国道に面し、中央公民館の東どなり、北部製糖の工場とのあいだ"><use href="#michi-map"/></svg></div><div class="body"><b>道の駅</b><p>今帰仁の食と産業を伝え、訪れる人と村をつなぐ場</p></div></a>
   </div>
 </section>
 
@@ -401,7 +427,10 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <p class="lead">4つの施設の役割と、開く時期です。</p>
 
   <h2>診療所</h2>
-  <div class="ph">写真：診療所の外観</div>
+  <figure class="photo">
+    <img src="img/shinryojo-hokencenter.jpg" style="max-width:640px" alt="芝生の広場の奥に建つ、赤い瓦屋根の平屋の建物">
+    <figcaption>診療所が入った建物（保健センターだったころ、2025年7月）</figcaption>
+  </figure>
   <div class="table-wrap"><table>
     <tr><th style="width:9em">開業</th><td>令和8年（2026年）11月2日（今帰仁診療所が移転）</td></tr>
     <tr><th>役割</th><td>村の身近な医療の拠点</td></tr>
@@ -437,6 +466,11 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
     <img src="img/komisen-sketch.jpg" style="width:100%;max-width:420px;background:#fff" alt="新しいコミュニティセンターのスケッチ。2階建ての建物と、中央公民館側に広がる外の空間">
     <figcaption>新しいコミュニティセンターのスケッチ 出典：広報なきじん 2026年7月号（今帰仁村）</figcaption>
   </figure>
+  <div class="gallery">
+    <img src="img/komisen-mokei-zentai.jpg" alt="模型。左に柱で囲まれた中央公民館、右に新しいコミュニティセンター">
+    <img src="img/komisen-mokei-naka.jpg" alt="新しいコミュニティセンターの模型を上から見たところ。ホールの客席が見える">
+  </div>
+  <p class="gallery-cap">新しいコミュニティセンターの模型（2026年5月）。左：中央公民館（左奥）と並んだ全体、右：屋根を外して上から見たホール</p>
   <figure class="photo">
     <img src="img/hero-chokan.jpg" alt="完成イメージ（鳥瞰図）">
     <figcaption>センター全体の完成イメージ 出典：今帰仁村</figcaption>
@@ -450,7 +484,10 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   </table></div>
 
   <h2>道の駅</h2>
-  <div class="ph">図：位置図</div>
+  <figure class="photo">
+    <div style="max-width:640px;border:1px solid var(--line);border-radius:10px;overflow:hidden"><svg style="display:block;width:100%;height:auto" viewBox="0 0 600 380" role="img" aria-label="道の駅の予定地の位置図。国道に面し、中央公民館の東どなり、北部製糖の工場とのあいだ"><use href="#michi-map"/></svg></div>
+    <figcaption>道の駅の予定地（略図）。国道に面し、中央公民館の東どなりにあたります。場所はおおよそで、範囲や建物の配置はこれから決めます。</figcaption>
+  </figure>
   <div class="table-wrap"><table>
     <tr><th style="width:9em">開業</th><td>令和14年（予定）。前倒しできないかも検討しています。</td></tr>
     <tr><th>めざす姿</th><td>今帰仁の食と産業、北部製糖の歴史を伝え、村を訪れる人を迎える場所</td></tr>
@@ -548,6 +585,7 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
       <dt>場所</dt><dd>今帰仁村役場</dd>
       <dt>議題</dt><dd><ol style="margin:0;padding-left:1.3em"><li>村内の視察（今帰仁城跡周辺、今泊集落、乙羽岳展望台など）</li><li>道の駅をめざす商業施設の、建物と屋外空間の配置の案</li><li>地域の歴史や暮らしに根ざしたブランドづくり</li></ol></dd>
       <dt>内容の要旨</dt><dd>午前は、建築、ランドスケープ、地域ブランドデザイン、事業戦略など各分野の専門家が村内を巡り、村の歴史や暮らし、計画地との位置関係を確かめました。午後は、産業連携ゾーンに整備する、道の駅をめざす商業施設について、配置の案が示されました。大きな建物を一つ建てるのではなく、小さな棟を集落のように並べて大きな軒下でつなぐ考え方や、ソーリガーの水辺を生かした広場づくりについて、意見を交わしました。あわせて、村民のみなさんと一緒に考える場の大切さも話し合いました。</dd>
+      <dt>写真</dt><dd><figure class="photo" style="margin:0"><img src="img/kaigi2-mokei.jpg" style="max-width:480px" alt="道の駅をめざす施設の配置を検討するための白い模型"><figcaption>検討に使った配置の模型（検討中の案です）</figcaption></figure></dd>
       <dt>次の予定</dt><dd>今回の議論を踏まえ、マスタープランの取りまとめを進めます。</dd>
       <dt>掲載日</dt><dd>令和8年（2026年）◯月◯日 <span class="todo">記入</span></dd>
     </dl>
@@ -739,10 +777,14 @@ footer .op{border-top:1px solid #3b4d57;margin-top:14px;padding-top:14px}
   <div class="wrap">
     <div><b>北山文化圏センター 整備事業の情報サイト（仮）</b></div>
     <div class="op">今帰仁村の了承を得て、北山文化圏センター事業化推進事業事務局が運営しています。今帰仁村の公式サイトではありません。<br>
-    今帰仁村公式サイト：<a href="#site">（リンク）</a>　｜　<a href="#site">このサイトについて・お問い合わせ</a></div>
+    今帰仁村公式サイト：<a href="https://www.nakijin.jp/" target="_blank" rel="noopener">www.nakijin.jp</a>　｜　<a href="#site">このサイトについて・お問い合わせ</a></div>
   </div>
 </footer>
 
+<script>
+// 下書き（非公開）の記事は、手元のプレビュー（localhost）のときだけ drafts/drafts.js から読み込む
+if (["localhost","127.0.0.1"].includes(location.hostname)) document.write('<script src="drafts/drafts.js"><\/script>');
+</script>
 <script>
 // ページ切り替え（#about などで表示するページを選ぶ）
 const pages = document.querySelectorAll('section.page');
@@ -825,6 +867,12 @@ const NEWS = [
 <h3>国の史跡、そして世界遺産へ</h3><ul><li>昭和47年（1972年）5月15日、「今帰仁城跡 附シイナ城跡」として国の史跡に指定されました。</li><li>平成12年（2000年）12月、世界遺産「琉球王国のグスク及び関連遺産群」の一つとして登録されました。</li></ul>
 <h3>京都の「北山文化」とは別のもの</h3><p>教科書に出てくる「北山文化（きたやまぶんか）」は、室町時代の京都、金閣寺のころの文化のことです。今帰仁の「北山（ほくざん）」とは、場所も読み方も違います。</p>`,
     refs:['文化庁 文化遺産オンライン「今帰仁城跡 附シイナ城跡」','文化庁 文化遺産オンライン「世界遺産 琉球王国のグスク及び関連遺産群」','今帰仁村「今帰仁村の集落・仲宗根」'] },
+  { id:'kaigi2', date:'2026-11-10', cat:'会議', img:'img/kaigi2-mokei.jpg', title:'第2回マスタープラン検討会議を開きました',
+    lead:'令和8年（2026年）10月6日、北山文化圏センターのマスタープラン（全体の方向）をつくるための、第2回の検討会議を今帰仁村役場で開きました。',
+    body:`<h3>午前：村内の視察</h3><p>建築、ランドスケープ、地域ブランドデザイン、事業戦略など各分野の専門家が、今帰仁城跡周辺や今泊集落、乙羽岳展望台などを巡り、村の歴史や暮らし、計画地との位置関係を確かめました。</p>
+<h3>午後：会議</h3><p>産業連携ゾーンに整備する、道の駅をめざす商業施設について、建物と屋外空間の配置の案が示されました。大きな建物を一つ建てるのではなく、小さな棟を集落のように並べて大きな軒下でつなぐ考え方や、ソーリガーの水辺を生かした広場づくりについて、意見を交わしました。あわせて、村民のみなさんと一緒に考える場の大切さも話し合いました。</p>
+<p>写真は、検討に使った配置の模型です（検討中の案です）。</p>
+<h3>これから</h3><p>今回の議論を踏まえ、マスタープランの取りまとめを進め、令和8年（2026年）12月にまとめる予定です。会議の記録は<a href="#record">検討の記録</a>に載せています。</p>` },
   { id:'koji-2611', date:'2026-11-13', cat:'工事', img:'img/koji-kominkan-naibu.jpg', title:'工事の進み具合（2026年11月）',
     lead:'中央公民館とコミュニティセンターの工事の、いまの様子をお伝えします。',
     body:`<h3>コミュニティセンター</h3><p>令和8年度は、新しい建物の建て替え工事を行っています。いまの（旧）コミュニティセンターは、令和9年度に解体する予定です。</p>
@@ -849,16 +897,17 @@ const NEWS = [
 <p>村は、北山文化圏センターを、地域・命・世代・文化をつなぐ「つながりの拠点」と位置づけています。</p>
 <h3>いつから使えるか</h3><p>診療所は令和8年（2026年）11月2日に開業しました。中央公民館とコミュニティセンターは令和10年度（2028年度）、道の駅は令和14年（2032年）の予定です。くわしくは<a href="#progress">スケジュールと進捗</a>をご覧ください。</p>
 <h3>どこにできるか</h3><p>今帰仁村仲宗根・玉城の一帯で、北部製糖の敷地内とその周辺です。</p>` },
-  { id:'shinryojo', date:'2026-11-04', cat:'診療所', title:'診療所が開業しました',
+  { id:'shinryojo', date:'2026-11-04', cat:'診療所', img:'img/shinryojo-hokencenter.jpg', title:'診療所が開業しました',
     lead:'北山文化圏センターの最初の施設として、令和8年（2026年）11月2日、今帰仁診療所が移転し、診療を始めました。',
     body:`<p>診療科目・診療時間などは、<a href="https://nakijinsin.com/" target="_blank" rel="noopener">今帰仁診療所のサイト</a>をご覧ください。</p><p>中央公民館とコミュニティセンターは令和10年度、道の駅は令和14年の予定で、施設は順に開いていきます。</p>` },
   { id:'open', date:'2026-11-04', cat:'サイト', title:'情報サイトを開設しました',
     lead:'北山文化圏センター整備事業の全体像と進み具合を、村のみなさんにわかりやすくお伝えするため、このサイトを開設しました。',
     body:`<p>このサイトは、今帰仁村の了承を得て、北山文化圏センター事業化推進事業事務局が運営しています。工事や会議に動きがあったときと、少なくとも毎月1回、内容を見直して更新します。</p><p>ご意見・ご質問は<a href="#site">問い合わせ</a>からお寄せください。</p>` },
 ];
+if (window.DRAFTS) NEWS.push(...window.DRAFTS.map(d => ({...d, title:'【下書き・非公開】' + d.title})));
 NEWS.sort((a,b) => (b.pin?1:0)-(a.pin?1:0) || b.date.localeCompare(a.date));
 const CATS = ['すべて','お知らせ','工事','募集','読みもの'];
-const catOf = n => ['サイト','診療所'].includes(n.cat) ? 'お知らせ' : n.cat;
+const catOf = n => ['サイト','診療所','会議'].includes(n.cat) ? 'お知らせ' : n.cat;
 const fmt = d => d.replaceAll('-','.');
 const li = n => `<li><time>${fmt(n.date)}</time><span class="tag">${n.cat}</span><a href="#news/${n.id}">${n.pin?'<span class="pin">注目</span>':''}${n.title}</a></li>`;
 let curCat = 'すべて';
