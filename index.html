@@ -154,6 +154,8 @@ figure.photo figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
 .forms b{display:block;font-size:1rem;margin-bottom:2px}
 .btn{display:inline-block;background:var(--main);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500;font-size:.95rem}
 .btn.light{background:#fff;color:var(--main)}
+.maplink{display:inline-block;white-space:nowrap;font-size:.85rem;padding:1px 10px;margin-left:4px;border:1px solid var(--main);border-radius:999px;text-decoration:none}
+.maplink::before{content:"📍";margin-right:3px}
 .note{background:var(--accent-soft);border-radius:10px;padding:14px 18px;font-size:.92rem}
 
 /* フッター */
@@ -891,8 +893,8 @@ const NEWS = [
 </table></div>
 <p>内容は変わることがあります。各日の時間は、お申し込みの方に、後日あらためてお知らせします。</p>
 <h3>会場・宿泊</h3><div class="table-wrap"><table>
-<tr><th style="width:9em">会場</th><td>今帰仁村コミュニティセンター</td></tr>
-<tr><th>宿泊</th><td>玉城公民館（今帰仁村）。12日・13日の2泊。希望する方は11日の前泊もできます</td></tr>
+<tr><th style="width:9em">会場</th><td>今帰仁村コミュニティセンター <small>（今帰仁村仲宗根230-2）</small> <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%8A%E5%B8%B0%E4%BB%81%E6%9D%91%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E6%B2%96%E7%B8%84%E7%9C%8C%E5%9B%BD%E9%A0%AD%E9%83%A1%E4%BB%8A%E5%B8%B0%E4%BB%81%E6%9D%91%E4%BB%B2%E5%AE%97%E6%A0%B9230-2" target="_blank" rel="noopener">Googleマップで見る</a></td></tr>
+<tr><th>宿泊</th><td>玉城公民館 <small>（今帰仁村玉城612）</small> <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E5%9F%8E%E5%8C%BA%E5%85%AC%E6%B0%91%E9%A4%A8%20%E6%B2%96%E7%B8%84%E7%9C%8C%E5%9B%BD%E9%A0%AD%E9%83%A1%E4%BB%8A%E5%B8%B0%E4%BB%81%E6%9D%91%E7%8E%89%E5%9F%8E612" target="_blank" rel="noopener">Googleマップで見る</a><br>12日・13日の2泊。希望する方は11日の前泊もできます</td></tr>
 <tr><th>宿泊費</th><td>1泊 学生500円・一般1,500円（2泊で学生1,000円・一般3,000円、前泊を入れた3泊で学生1,500円・一般4,500円）。お支払いの方法は、お申し込みの方に、後日あらためてお知らせします</td></tr>
 </table></div>
 <h3>講師</h3><figure style="margin:0 0 12px"><img src="img/ws/maruyama-portrait.jpg" alt="机に向かって話す丸山欣也さん" style="width:100%;max-width:420px;border-radius:8px;display:block"><figcaption class="gallery-cap">丸山欣也さん（写真：ご本人提供）</figcaption></figure><ul><li><b>丸山 欣也さん</b>（建築家、Team ZOO アトリエモビル会長、NPO法人有形デザイン機構理事長）… 昭和50年（1975年）に完成した中央公民館を、象設計集団とともに設計しました。</li><li><b>浅沼 秀治さん</b>（建築家、Team ZOO アトリエモビル代表取締役、NPO法人有形デザイン機構副理事長）</li><li><b>杉山 至さん</b>（兵庫県立芸術文化観光専門職大学 准教授、舞台美術家）</li></ul>
@@ -922,7 +924,7 @@ const NEWS = [
 <tr><th>締め切り</th><td>定員になり次第終了</td></tr>
 </table></div>
 <h3>申し込みのしかた</h3><p>このサイトの申し込みフォームからお申し込みください。電話・窓口での受付はしていません。</p><p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe2HEP7SNzJ3tG1jpFGV_n0bBYuDLlUdjjpAFrnQmnLpyf6Lw/viewform" target="_blank" rel="noopener">申し込み・お問い合わせフォーム</a></p>
-<h3>フライヤー（チラシ）</h3><p>印刷して配ったり、掲示したりできるフライヤーです（A4・1枚、PDF 約1.3MB）。</p><p><a class="btn light" style="border:1.5px solid var(--main)" href="img/ws/hakkenteki-ws-flyer.pdf" download="発見的方法ワークショップ_フライヤー.pdf">フライヤーをダウンロード（PDF）</a></p>
+<h3>フライヤー（チラシ）</h3><p>印刷して配ったり、掲示したりできるフライヤーです（A4・1枚、PDF 約1.5MB）。</p><p><a class="btn light" style="border:1.5px solid var(--main)" href="img/ws/hakkenteki-ws-flyer.pdf" download="発見的方法ワークショップ_フライヤー.pdf">フライヤーをダウンロード（PDF）</a></p>
 <h3>主催・お問い合わせ</h3><p>主催：今帰仁村 企画財政課<br>お問い合わせ：北山文化圏センター事業化推進事業事務局</p><p>お問い合わせは、上の申し込みフォームで、最初の「ご用件」に「問い合わせる」を選んでお送りください。</p>` },
   { id:'aisho', date:'2026-11-20', cat:'募集', pin:true, title:'北山文化圏センターの「愛称」を募集します',
     lead:'診療所・中央公民館・コミュニティセンター・道の駅がひとつになる「北山文化圏センター」。村のみなさんが呼びやすく、親しみのもてる「愛称」を募集します。',
