@@ -26,6 +26,13 @@ a{color:var(--main)}
 img{max-width:100%}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 
+/* 11/20 修正箇所の表示（役場・照屋さん確認用。確認が済んだら外す） */
+del.rv{color:#b3261e;text-decoration:line-through;text-decoration-thickness:1.5px;background:#fdecea}
+ins.rv{color:#0b4f9c;text-decoration:none;background:#e3f0ff;border-bottom:2px solid #0b4f9c}
+.revbox{background:#fffbea;border-bottom:1px solid #e6d58a;font-size:.86rem;padding:8px 16px}
+.revbox summary{cursor:pointer;font-weight:700;max-width:1040px;margin:0 auto}
+.revbox ol{max-width:1040px;margin:6px auto 2px;padding-left:1.6em}
+.revbox li{margin:3px 0}
 /* 試作の帯 */
 .proto{background:#3b3b3b;color:#fff;font-size:.8rem;text-align:center;padding:4px 16px}
 
@@ -336,6 +343,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
 </svg>
 
 <div class="proto">役場確認用の試作です。黄色い点線の印は、確認してから決める箇所です。</div>
+<details class="revbox" open><summary>11月20日の修正箇所（照屋さんのご指摘による）　<del class="rv">赤い取り消し線</del>＝前の文　<ins class="rv">青い下線</ins>＝新しい文</summary><ol><li>北部製糖の土地にふれる書き方を控えめにしました（<a href="#top">トップ</a>・<a href="#about">事業について</a>・<a href="#faq">よくある質問</a>・<a href="#news/kiji4">記事「施設がひとつになる理由」</a>）。</li><li>「4つの施設」と限定せず、「など」としました（トップ・事業について・施設の紹介・<a href="#record">検討の記録</a>・<a href="#voice">みんなで考える</a>・よくある質問・記事）。</li><li>「見える工場」の記載を外しました（<a href="#record">検討の記録</a>）。</li><li>中央公民館の設計者（象設計集団・アトリエ・モビル）を、改修の話の後ろから、もとの建物の説明の前に移し、改修の設計者（AMS＋ホープ）を足しました（<a href="#about">事業について</a>）。<a href="#org">運営の体制</a>の「設計・工事」は改修の設計者に替えました。</li><li>道の駅の「めざす姿」から「北部製糖の歴史」を外しました（<a href="#facilities">施設の紹介</a>）。</li><li>スケジュールは変えていません。村でご確認をお願いします（<a href="#progress">スケジュールと進捗</a>）。</li></ol></details>
 
 <header>
   <div class="head">
@@ -369,7 +377,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
     <span class="tate">今帰仁村　仲宗根・玉城</span>
     <p class="eyebrow">今帰仁村　北山文化圏センター整備事業</p>
     <h1>歴史と未来をつなぐ、<br>つながりの拠点。</h1>
-    <p>北山文化圏センターは、北部製糖の敷地内とその周りに、診療所・中央公民館・コミュニティセンター・道の駅の4つの施設をひとつのまとまりとして整える今帰仁村の事業です。地域・命・世代・文化をつなぎ、ずっと暮らし続けられる村をめざします。</p>
+    <p>北山文化圏センターは、<del class="rv">北部製糖の敷地内とその周りに、診療所・中央公民館・コミュニティセンター・道の駅の4つの施設をひとつのまとまりとして整える</del><ins class="rv">中央公民館周辺の公共施設を再編し、診療所・中央公民館・コミュニティセンター・道の駅などをひとつのまとまりとして、新たな拠点を整える</ins>今帰仁村の事業です。地域・命・世代・文化をつなぎ、ずっと暮らし続けられる村をめざします。</p>
     <a class="btn light" href="#about">事業のあらましを見る</a>
     <p style="position:relative;z-index:1;margin:18px 0 0;font-size:.75rem;opacity:.85">図：完成イメージ（中央公民館・コミュニティセンター・駐車場を上空から）出典：今帰仁村</p>
   </div>
@@ -439,7 +447,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
 
 
   <div class="ishi" aria-hidden="true"></div>
-  <h2>4つの施設</h2>
+  <h2><del class="rv">4つの施設</del><ins class="rv">主な施設</ins></h2>
   <div class="fac-grid">
     <a class="fac" href="#facilities"><img src="img/shinryojo-hokencenter.jpg" alt="診療所が入った建物（保健センターだったころ）" style="display:block;width:100%;height:130px;object-fit:cover"><div class="body"><b>診療所</b><p>村の身近な医療の拠点</p></div></a>
     <a class="fac" href="#facilities"><img src="img/kominkan-nakaniwa.jpg" alt="赤い柱が並ぶ中央公民館と芝生の中庭" style="display:block;width:100%;height:130px;object-fit:cover"><div class="body"><b>中央公民館</b><p>50年使われてきた建物を生かし、新しい活動とにぎわいの場に</p></div></a>
@@ -454,7 +462,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   <p class="lead">北山文化圏センターが何をつくり、なぜ必要なのかをまとめました。</p>
 
   <h2>北山文化圏センターとは</h2>
-  <p>今帰仁村仲宗根・玉城の一帯（北部製糖の敷地内とその周辺）に、診療所・中央公民館・コミュニティセンター・道の駅の4つの施設を、ひとつの「北山文化圏センター」として整える事業です。</p>
+  <p>今帰仁村仲宗根・玉城の<del class="rv">一帯（北部製糖の敷地内とその周辺）に、診療所・中央公民館・コミュニティセンター・道の駅の4つの施設を</del><ins class="rv">中央公民館周辺の公共施設を再編し、診療所・中央公民館・コミュニティセンター・道の駅などを</ins>、ひとつの「北山文化圏センター」として整える事業です。</p>
   <p>施設はそれぞれ別の役割をもちながら、駐車場や広場を共有し、村民の暮らしと、村を訪れる人の両方を支える場所をめざしています。</p>
   <figure class="photo">
     <img src="img/ichizu.jpg" style="max-width:600px" alt="航空写真に、保健センター・中央公民館・コミュニティセンター・工事の範囲を示した位置図">
@@ -471,7 +479,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   <h3>2. 機能のまとめ直し</h3>
   <p>村役場の新庁舎への移転などで、村の施設の使われ方が変わってきました。ばらばらになった機能を、使いやすい形でまとめ直します。</p>
   <h3>3. 村の産業と交流の拠点づくり</h3>
-  <p>北部製糖の敷地を生かし、今帰仁の食や産業を伝え、村内外の人が行き交う場所をつくります。</p>
+  <p><del class="rv">北部製糖の敷地を生かし、</del><ins class="rv">隣接する土地を取り込んで、</ins>今帰仁の食や産業を伝え、村内外の人が行き交う場所をつくります。</p>
 
   <h2>めざす姿</h2>
   <p>今帰仁村は、琉球の三山時代に「北山」の拠点だった、歴史と文化の香り高い村です。いまも地域の伝統が各地に残り、「北山の風（演技集団）」など、若い世代が北山の文化を受け継ぐ取り組みも生まれています。海・山・川の豊かな自然にも恵まれています。</p>
@@ -493,7 +501,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   </ul>
 
   <h2>中央公民館という建物について</h2>
-  <p>中央公民館は、沖縄の伝統的な建築の考え方を取り入れて設計され、建築として高い評価を受けてきた建物です。今回の改修では、建物の良さを残しながら耐震性を高め、ギャラリー・キッチンスタジオ・講堂などを備えた新しい使い方に生まれ変わります。設計は象設計集団で、アトリエ・モビルが協力しました。</p>
+  <p>中央公民館は、<ins class="rv">象設計集団が設計し（アトリエ・モビルが協力）、昭和50年（1975年）に完成しました。</ins>沖縄の伝統的な建築の考え方を取り入れて設計され、建築として高い評価を受けてきた建物です。今回の改修<ins class="rv">（設計はAMS＋ホープ）</ins>では、建物の良さを残しながら耐震性を高め、ギャラリー・キッチンスタジオ・講堂などを備えた新しい使い方に生まれ変わります。<del class="rv">設計は象設計集団で、アトリエ・モビルが協力しました。</del></p>
   <figure class="photo">
     <img src="img/kominkan-kairou.jpg" style="max-width:640px" alt="赤い柱がまっすぐ並ぶ中央公民館の回廊。右手に芝生と花">
     <figcaption>赤い柱が並ぶ回廊（改修前、2020年1月）</figcaption>
@@ -504,7 +512,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
 <!-- ========== 施設の紹介 ========== -->
 <section class="page dz" data-page="facilities">
   <h1>施設の紹介</h1>
-  <p class="lead">4つの施設の役割と、開く時期です。</p>
+  <p class="lead"><del class="rv">4つの施設</del><ins class="rv">主な施設</ins>の役割と、開く時期です。</p>
 
   <header class="fac-head c-kibi" style="--img:url(img/shinryojo-hokencenter.jpg)"><span class="no">01</span><div><h2>診療所</h2><p>村の身近な医療の拠点</p></div><small>診療所が入った建物（保健センターだったころ、2025年7月）</small></header>
   <div class="table-wrap"><table>
@@ -562,7 +570,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   </figure>
   <div class="table-wrap"><table>
     <tr><th style="width:9em">開業</th><td>令和14年（予定）。前倒しできないかも検討しています。</td></tr>
-    <tr><th>めざす姿</th><td>今帰仁の食と産業、北部製糖の歴史を伝え、村を訪れる人を迎える場所</td></tr>
+    <tr><th>めざす姿</th><td>今帰仁の食と産業<del class="rv">、北部製糖の歴史</del>を伝え、村を訪れる人を迎える場所</td></tr>
     <tr><th>名前・内容</th><td>これから決めていきます。</td></tr>
   </table></div>
 </section>
@@ -633,7 +641,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
     <div class="legend"><span><i style="background:var(--done)"></i>終わったこと</span><span><i style="background:var(--doing)"></i>いま進めていること</span><span><i style="background:#fff;border:1px solid var(--todo)"></i>これから</span></div>
   </div>
   <p style="margin-top:14px">診療所は令和8年（2026年）11月2日に開業しました。中央公民館は改修の1期（解体と補修）を令和8年度に終えます（2期は令和9年度の予定）。コミュニティセンターは、令和8年度に新しい建物の建て替え工事を行っています。</p>
-  <p>これと並行して、4つの施設をどう使い、どう結びつけるかの全体の方向（マスタープラン）を令和8年（2026年）12月に、基本計画（道の駅と「見える工場」を含みます）を令和9年（2027年）3月にまとめます。道の駅は、これらの計画をもとに設計・工事を進めます。</p>
+  <p>これと並行して、<del class="rv">4つの</del>施設をどう使い、どう結びつけるかの全体の方向（マスタープラン）を令和8年（2026年）12月に、基本計画<del class="rv">（道の駅と「見える工場」を含みます）</del>を令和9年（2027年）3月にまとめます。道の駅は、これらの計画をもとに設計・工事を進めます。</p>
 
   <h2>記録の一覧（新しいものが上）</h2>
   <div class="table-wrap"><table>
@@ -698,7 +706,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   </a>
   <a class="banner" href="#news/aisho">
     <span class="banner-tag">愛称募集</span>
-    <span><b>北山文化圏センターの「愛称」を募集します</b><br><small>4つの施設をまとめた、親しみやすい呼び名を募ります。 <span class="todo">要確認：期間・応募できる人</span></small></span>
+    <span><b>北山文化圏センターの「愛称」を募集します</b><br><small><del class="rv">4つの施設</del><ins class="rv">施設</ins>をまとめた、親しみやすい呼び名を募ります。 <span class="todo">要確認：期間・応募できる人</span></small></span>
     <span class="banner-go">くわしく →</span>
   </a>
 
@@ -761,9 +769,9 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   <p class="updated">最終更新：2026年◯月◯日</p>
 
   <h2>事業全体について</h2>
-  <details class="qa"><summary>北山文化圏センターとは何ですか？</summary><div class="a"><div>診療所・中央公民館・コミュニティセンター・道の駅の4つの施設を、ひとつの「北山文化圏センター」として整える今帰仁村の事業です。施設はそれぞれ別の役割をもちながら、駐車場や広場を共有します。</div></div></details>
-  <details class="qa"><summary>なぜ4つの施設をまとめるのですか？</summary><div class="a"><div>中央公民館は完成から50年、コミュニティセンターは開館から40年以上がたち、建物が古くなっているためです。また、村の施設の使われ方が変わり、ばらばらになった機能を使いやすい形でまとめ直すためです。村は、北山文化圏センターを、地域・命・世代・文化をつなぐ「つながりの拠点」と位置づけています。</div></div></details>
-  <details class="qa"><summary>場所はどこですか？</summary><div class="a"><div>今帰仁村の仲宗根・玉城の一帯で、北部製糖の敷地内とその周辺です。<a href="#about">位置図</a>もご覧ください。</div></div></details>
+  <details class="qa"><summary>北山文化圏センターとは何ですか？</summary><div class="a"><div><del class="rv">診療所・中央公民館・コミュニティセンター・道の駅の4つの施設を</del><ins class="rv">中央公民館周辺の公共施設を再編し、診療所・中央公民館・コミュニティセンター・道の駅などを</ins>、ひとつの「北山文化圏センター」として整える今帰仁村の事業です。施設はそれぞれ別の役割をもちながら、駐車場や広場を共有します。</div></div></details>
+  <details class="qa"><summary>なぜ<del class="rv">4つの</del>施設をまとめるのですか？</summary><div class="a"><div>中央公民館は完成から50年、コミュニティセンターは開館から40年以上がたち、建物が古くなっているためです。また、村の施設の使われ方が変わり、ばらばらになった機能を使いやすい形でまとめ直すためです。村は、北山文化圏センターを、地域・命・世代・文化をつなぐ「つながりの拠点」と位置づけています。</div></div></details>
+  <details class="qa"><summary>場所はどこですか？</summary><div class="a"><div>今帰仁村の仲宗根・玉城<del class="rv">の一帯で、北部製糖の敷地内とその周辺</del><ins class="rv">の、中央公民館の周辺</ins>です。<a href="#about">位置図</a>もご覧ください。</div></div></details>
   <details class="qa"><summary>このサイトは今帰仁村の公式サイトですか？</summary><div class="a"><div>いいえ。今帰仁村の了承を得て、北山文化圏センター事業化推進事業事務局が作成・運営しています。正式な手続き・申請などは、今帰仁村の公式サイトや窓口でご確認ください。</div></div></details>
 
   <h2>スケジュール・工事中の暮らし</h2>
@@ -782,7 +790,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   <h2>使い方・申し込み・料金</h2>
   <details class="qa"><summary>使用料はいくらですか？</summary><div class="a"><div>中央公民館・コミュニティセンターの部屋の使用料は、まだ決まっていません。決まり次第お知らせします。</div></div></details>
   <details class="qa"><summary>部屋の申し込みはどうすればよいですか？</summary><div class="a"><div>申し込みの方法は、まだ決まっていません。利用開始（令和10年度の予定）の前にお知らせします。</div></div></details>
-  <details class="qa"><summary>駐車場はありますか？</summary><div class="a"><div>4つの施設で駐車場や広場を共有する計画です。駐車場・外構の工事は令和9年度の予定です。台数は100台を超える予定です。</div></div></details>
+  <details class="qa"><summary>駐車場はありますか？</summary><div class="a"><div><del class="rv">4つの</del>施設で駐車場や広場を共有する計画です。駐車場・外構の工事は令和9年度の予定です。台数は100台を超える予定です。</div></div></details>
 
   <h2>参加・意見の出し方</h2>
   <details class="qa"><summary>意見はどこに出せばよいですか？</summary><div class="a"><div>北山文化圏センター事業化推進事業事務局の問い合わせフォームで受け付けます。いただいた意見は、個人が特定されない形で事業の検討に生かします。</div></div></details>
@@ -802,7 +810,7 @@ footer .op{border-top:1px solid #5c463c;margin-top:14px;padding-top:14px}
   <div class="roles">
     <div class="card"><span class="role-no">1</span><h3>今帰仁村</h3><p>事業を進める主体です。計画を決め、施設を整えます。</p><p class="when">担当：今帰仁村 企画財政課</p></div>
     <div class="card"><span class="role-no">2</span><h3>北山文化圏センター事業化推進事業事務局</h3><p>このサイトを作成・運営し、事業についてのご意見・ご質問の窓口になります。</p></div>
-    <div class="card"><span class="role-no">3</span><h3>設計・工事</h3><p>村の発注を受けて、建物の設計と工事を行います。</p><p class="when">中央公民館の設計：象設計集団（協力 アトリエ・モビル）</p></div>
+    <div class="card"><span class="role-no">3</span><h3>設計・工事</h3><p>村の発注を受けて、建物の設計と工事を行います。</p><p class="when"><del class="rv">中央公民館の設計：象設計集団（協力 アトリエ・モビル）</del><ins class="rv">中央公民館の改修の設計：AMS＋ホープ</ins></p></div>
     <div class="card"><span class="role-no">4</span><h3>施設の管理・運営の担い手</h3><p>村づくり推進組織が、施設の管理・運営を担う予定です。</p><p class="when">決まったことから、このページに書き足します。</p></div>
   </div>
 
@@ -962,13 +970,13 @@ const NEWS = [
 <h3>建築の世界での評価</h3><ul><li>昭和52年（1977年）、設計者はこの建物で芸術選奨文部大臣新人賞を受けました。</li><li>平成27年度（2015年度）、DOCOMOMO Japan の選定建築に選ばれました。</li></ul>
 <h3>改修で残すもの・変わるもの</h3><p>建物の良さを残しながら耐震性を高めます。改修のあとは、講堂、活動室、ギャラリー、キッチンスタジオ、事務室などを備えた、新しい使い方に生まれ変わります。1期（解体と補修）は令和8年度に終わり、2期は令和9年度の予定です。</p>`,
     refs:['象設計集団「今帰仁村中央公民館」','DOCOMOMO Japan「今帰仁村中央公民館」No.197','琉球新報 2020-01-14（柱の塗り直し）'] },
-  { id:'kiji4', date:'2026-11-06', cat:'読みもの', img:'img/ichizu.jpg', title:'4つの施設がひとつになる理由',
-    lead:'「事業の全体の姿が見えにくい」という声をいただきました。なぜ4つの施設をまとめるのか、いつ・どこから使えるようになるのかを、1本で説明します。',
+  { id:'kiji4', date:'2026-11-06', cat:'読みもの', img:'img/ichizu.jpg', title:'<del class="rv">4つの</del>施設がひとつになる理由',
+    lead:'「事業の全体の姿が見えにくい」という声をいただきました。なぜ<del class="rv">4つの</del>施設をまとめるのか、いつ・どこから使えるようになるのかを、1本で説明します。',
     body:`<h3>古くなった建物</h3><p>中央公民館は完成から50年、コミュニティセンターは開館から40年以上がたち、設備の不具合も増えていました。中央公民館は建物の良さを残して改修し、コミュニティセンターは新しい建物に建て替えます。</p>
 <h3>まとめると何が良くなるか</h3><ul><li><b>診療所</b> … 村の身近な医療の拠点</li><li><b>中央公民館</b> … 50年使われてきた建物を生かした、新しい活動とにぎわいの場</li><li><b>コミュニティセンター</b> … ホールと舞台を備えた、村の大きな集まりの場</li><li><b>道の駅</b> … 今帰仁の食と産業を伝え、訪れる人と村をつなぐ場</li></ul>
 <p>村は、北山文化圏センターを、地域・命・世代・文化をつなぐ「つながりの拠点」と位置づけています。</p>
 <h3>いつから使えるか</h3><p>診療所は令和8年（2026年）11月2日に開業しました。中央公民館とコミュニティセンターは令和10年度（2028年度）、道の駅は令和14年（2032年）の予定です。くわしくは<a href="#progress">スケジュールと進捗</a>をご覧ください。</p>
-<h3>どこにできるか</h3><p>今帰仁村仲宗根・玉城の一帯で、北部製糖の敷地内とその周辺です。</p>` },
+<h3>どこにできるか</h3><p>今帰仁村仲宗根・玉城<del class="rv">の一帯で、北部製糖の敷地内とその周辺</del><ins class="rv">の、中央公民館の周辺</ins>です。</p>` },
   { id:'shinryojo', date:'2026-11-04', cat:'診療所', img:'img/shinryojo-hokencenter.jpg', title:'診療所が開業しました',
     lead:'北山文化圏センターの最初の施設として、令和8年（2026年）11月2日、今帰仁診療所が移転し、診療を始めました。',
     body:`<p>診療科目・診療時間などは、<a href="https://nakijinsin.com/" target="_blank" rel="noopener">今帰仁診療所のサイト</a>をご覧ください。</p><p>中央公民館とコミュニティセンターは令和10年度、道の駅は令和14年の予定で、施設は順に開いていきます。</p>` },
